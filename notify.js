@@ -1,4 +1,5 @@
-import fetch from 'node-fetch';
+// Xóa hoàn toàn dòng: import fetch from 'node-fetch';
+// Node.js 22+ đã hỗ trợ sẵn fetch() toàn cục
 
 const TELEGRAM_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
 const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID;
