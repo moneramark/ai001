@@ -1,0 +1,12 @@
+{
+  "name": "ai001",
+  "version": "1.0.0",
+  "description": "Website health check automation",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.40.0"
+  }
+}
