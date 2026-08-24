@@ -1,0 +1,49 @@
+name: Continuous Website Health Check
+
+on:
+  schedule:
+    # Chạy tự động lúc 00:00 UTC (07:00 sáng giờ VN) mỗi ngày
+    - cron: '0 0 * * *'
+  workflow_dispatch: # Cho phép kích hoạt thủ công từ giao diện GitHub
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout mã nguồn
+        uses: actions/checkout@v4
+
+      - name: Thiết lập Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Cài đặt Dependencies
+        run: npm ci
+
+      - name: Cài đặt Playwright Browsers
+        run: npx playwright install --with-deps chromium
+
+      - name: Chạy kiểm tra tự động
+        run: npx playwright test
+
+      # Lưu lại hình ảnh screenshot nếu test bị lỗi hoặc cần xem lại
+      - name: Lưu trữ Báo cáo & Screenshot
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: |
+            reports/
+            playwright-report/
+          retention-days: 7
+
+      # Gửi thông báo nếu các bước kiểm tra phía trên bị lỗi
+      - name: Gửi thông báo khi thất bại
+        if: failure()
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        run: node notify.js failure
