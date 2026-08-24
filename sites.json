@@ -1,0 +1,10 @@
+[
+  { "name": "Trang chủ", "url": "https://www.pavietnam/vn/" },
+  { "name": "Hosting", "url": "https://www.pavietnam.vn/vn/hosting/" },
+  { "name": "Server", "url": "https://www.pavietnam.vn/vn/server/" }
+  { "name": "Website", "url": "https://www.pavietnam.vn/vn/website/" }
+  { "name": "Email server", "url": "https://www.pavietnam.vn/vn/email-server/" }
+  { "name": "Chứng chỉ SSL tls", "url": "https://www.pavietnam.vn/vn/chung-chi-ssl-tls/" }
+  { "name": "Tổng đài", "url": "https://www.pavietnam.vn/vn/tong-dai/" }
+  { "name": "E Hóa đơn", "url": "https://www.pavietnam.vn/vn/e-hoa-don/" }
+]
