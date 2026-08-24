@@ -2,9 +2,14 @@ name: Continuous Website Health Check
 
 on:
   schedule:
-    # Chạy tự động lúc 00:00 UTC (07:00 sáng giờ VN) mỗi ngày
+    # Định kỳ 3 tiếng một lần
     - cron: '0 */3 * * *'
-  workflow_dispatch: # Cho phép kích hoạt thủ công từ giao diện GitHub
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
 
 jobs:
   test:
@@ -17,7 +22,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22
-          #cache: 'npm'
 
       - name: Cài đặt Dependencies
         run: npm install
@@ -28,22 +32,16 @@ jobs:
       - name: Chạy kiểm tra tự động
         run: npx playwright test
 
-      # Lưu lại hình ảnh screenshot nếu test bị lỗi hoặc cần xem lại
-      - name: Lưu trữ Báo cáo & Screenshot
+      - name: Đẩy Báo cáo lên GitHub Pages (Web Online)
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          name: playwright-report
-          path: |
-            reports/
-            playwright-report/
-          retention-days: 7
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./reports
 
-      # Gửi thông báo nếu các bước kiểm tra phía trên bị lỗi
-      - name: Gửi thông báo khi thất bại
+      - name: Gửi thông báo kết quả qua Telegram
         if: always()
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-        run: node notify.js ${{ job.status }}
+        run: node notify.js

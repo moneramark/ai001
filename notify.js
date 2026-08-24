@@ -26,22 +26,26 @@ async function run() {
 
   const data = JSON.parse(fs.readFileSync('reports/summary.json'));
   const repo = process.env.GITHUB_REPOSITORY;
-  const runId = process.env.GITHUB_RUN_ID;
-  const runUrl = `https://github.com/${repo}/actions/runs/${runId}`;
+  const [owner, repoName] = repo.split('/');
+  const pagesUrl = `https://${owner}.github.io/${repoName}/`;
 
   const isPassed = data.failed === 0;
   const icon = isPassed ? '✅' : '🚨';
-  const statusText = isPassed ? 'TẤT CẢ LINK HOẠT ĐỘNG TỐT' : 'PHÁT HIỆN LINK LỖI';
+  const statusText = isPassed ? 'TẤT CẢ TỐT' : 'CÓ LỖI PHÁT HIỆN';
 
-  let msg = `${icon} *BÁO CÁO KIỂM TRA PAVIETNAM* ${icon}\n\n`;
+  let msg = `${icon} *BÁO CÁO GIÁM SÁT WEBSITE PAVIETNAM* ${icon}\n\n`;
   msg += `• *Trạng thái:* \`${statusText}\`\n`;
   msg += `• *Thời gian:* \`${new Date().toLocaleString('vi-VN', { timeZone: 'Asia/Ho_Chi_Minh' })}\`\n`;
+  msg += `• *Hạn SSL:* \`${data.sslInfo ? data.sslInfo.daysLeft + ' ngày (' + data.sslInfo.validTo + ')' : 'N/A'}\`\n`;
   msg += `• *Tổng URL pavietnam.vn đã quét:* \`${data.totalChecked}\`\n`;
-  msg += `• *Link hoạt động (2xx/3xx):* \`${data.passed}\`\n`;
-  msg += `• *Link hỏng (4xx/5xx/Timeout):* \`${data.failed}\`\n\n`;
+  msg += `• *Link sống:* \`${data.passed}\` | *Link lỗi:* \`${data.failed}\`\n\n`;
+
+  if (data.sslInfo && data.sslInfo.daysLeft <= 15) {
+    msg += `⚠️ *CẢNH BÁO:* SSL sắp hết hạn (còn ${data.sslInfo.daysLeft} ngày)!\n\n`;
+  }
 
   if (data.failed > 0) {
-    msg += `❌ *DANH SÁCH URL BỊ LỖI:*\n`;
+    msg += `❌ *DANH SÁCH LINK LỖI:*\n`;
     const failedLinks = data.details.filter((d) => !d.ok);
     failedLinks.forEach((item, idx) => {
       msg += `${idx + 1}. [${item.status}] \`${item.url}\`\n`;
@@ -49,7 +53,7 @@ async function run() {
     msg += `\n`;
   }
 
-  msg += `🔗 [Xem Ảnh Screenshot & Báo Cáo HTML](${runUrl})`;
+  msg += `🌐 [Bấm vào đây để xem Báo cáo Web Online](${pagesUrl})`;
 
   if (msg.length > 4000) {
     await sendTelegramMessage(msg.substring(0, 4000));
