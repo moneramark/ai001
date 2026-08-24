@@ -7,7 +7,7 @@ test('Kiểm tra giao diện và tính năng website', async ({ page, request })
 
   if (!fs.existsSync('reports')) fs.mkdirSync('reports');
 
-  const targetUrl = 'https://www.matbao.net/';
+  const targetUrl = 'https://www.pavietnam.vn/';
   const startTime = new Date();
 
   // 1. Truy cập và chụp ảnh giao diện
