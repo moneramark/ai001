@@ -41,9 +41,9 @@ jobs:
 
       # Gửi thông báo nếu các bước kiểm tra phía trên bị lỗi
       - name: Gửi thông báo khi thất bại
-        if: failure()
+        if: always()
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-        run: node notify.js failure
+        run: node notify.js ${{ job.status }}
