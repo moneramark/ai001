@@ -7,7 +7,7 @@ test('Kiểm tra giao diện và tính năng website', async ({ page, request })
   });
 
   // Thay URL trang web của bạn vào đây
-  const targetUrl = 'https://example.com';
+  const targetUrl = 'https://www.matbao.net/';
   await page.goto(targetUrl, { waitUntil: 'networkidle' });
 
   // 1. Chụp ảnh màn hình toàn trang
