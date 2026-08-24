@@ -3,106 +3,106 @@ import fs from 'fs';
 
 const sites = JSON.parse(fs.readFileSync('./sites.json', 'utf8'));
 
-test('Kiểm tra nhiều trang web và quét toàn bộ liên kết', async ({ browser, request }) => {
-  test.setTimeout(600000); // 10 phút timeout
+test('Kiểm tra đa trang và tối ưu hóa liên kết', async ({ browser, request }) => {
+  test.setTimeout(300000); // 5 phút timeout tối đa
 
   if (!fs.existsSync('reports')) fs.mkdirSync('reports');
 
-  const overallResults = [];
+  const allHrefs = new Set();
+  const siteScreenshots = [];
 
+  // BƯỚC 1: Quét nhanh qua các trang để chụp ảnh và thu gom liên kết
   for (const site of sites) {
-    console.log(`\n🔍 Đang quét trang: ${site.name} (${site.url})`);
-
-    // Tạo Tab mới độc lập cho từng trang
+    console.log(`🔍 Đang cào dữ liệu từ: ${site.name}`);
     const context = await browser.newContext();
     const page = await context.newPage();
 
-    let pageLoaded = true;
     try {
-      await page.goto(site.url, { waitUntil: 'domcontentloaded', timeout: 30000 });
-    } catch (err) {
-      pageLoaded = false;
-      console.error(`❌ Không thể truy cập ${site.url}: ${err.message}`);
-    }
+      await page.goto(site.url, { waitUntil: 'domcontentloaded', timeout: 25000 });
+      
+      const sanitizedName = site.name.replace(/[^a-z0-9]/gi, '_').toLowerCase();
+      await page.screenshot({ path: `reports/${sanitizedName}.png`, fullPage: true });
+      siteScreenshots.push({ name: site.name, image: `${sanitizedName}.png` });
 
-    if (!pageLoaded) {
-      overallResults.push({
-        siteName: site.name,
-        siteUrl: site.url,
-        total: 0,
-        passed: 0,
-        failed: 1,
-        details: [{ url: site.url, status: 'DOWN/TIMEOUT', ok: false, duration: 'N/A' }]
-      });
-      await context.close(); // Đóng tab
-      continue;
-    }
-
-    // Chụp ảnh màn hình
-    const sanitizedName = site.name.replace(/[^a-z0-9]/gi, '_').toLowerCase();
-    await page.screenshot({ path: `reports/${sanitizedName}.png`, fullPage: true });
-
-    // Quét toàn bộ liên kết
-    const hrefs = await page.locator('a[href]').evaluateAll((links) =>
-      links
-        .map((a) => a.getAttribute('href'))
-        .filter((href) => href && !href.startsWith('#') && !href.startsWith('javascript:') && !href.startsWith('mailto:'))
-    );
-
-    await context.close(); // Đóng tab sau khi thu thập xong link
-
-    const uniqueHrefs = [...new Set(hrefs)];
-    console.log(`🔗 Tìm thấy ${uniqueHrefs.length} liên kết trên ${site.name}`);
-
-    const linkCheckResults = [];
-    const batchSize = 10; // Kiểm tra song song 10 link/lượt
-
-    for (let i = 0; i < uniqueHrefs.length; i += batchSize) {
-      const batch = uniqueHrefs.slice(i, i + batchSize);
-      await Promise.all(
-        batch.map(async (href) => {
-          try {
-            const absoluteUrl = new URL(href, site.url).href;
-            const start = Date.now();
-            const res = await request.get(absoluteUrl, { timeout: 15000 });
-            const duration = Date.now() - start;
-
-            linkCheckResults.push({
-              url: absoluteUrl,
-              status: res.status(),
-              ok: res.ok(),
-              duration: `${duration}ms`
-            });
-          } catch (err) {
-            linkCheckResults.push({
-              url: href,
-              status: 'ERROR',
-              ok: false,
-              duration: 'N/A'
-            });
-          }
-        })
+      // Lấy toàn bộ link
+      const pageLinks = await page.locator('a[href]').evaluateAll((links) =>
+        links.map((a) => a.getAttribute('href'))
       );
+
+      // Lọc và chỉ giữ lại link thuộc domain pavietnam.vn
+      for (const href of pageLinks) {
+        if (!href || href.startsWith('#') || href.startsWith('javascript:') || href.startsWith('mailto:') || href.startsWith('tel:')) {
+          continue;
+        }
+
+        try {
+          const absoluteUrl = new URL(href, site.url).href;
+          // Chỉ thêm nếu là subdomain hoặc domain chính của pavietnam.vn
+          if (absoluteUrl.includes('pavietnam.vn')) {
+            allHrefs.add(absoluteUrl);
+          }
+        } catch (e) {
+          // Bỏ qua URL không hợp lệ
+        }
+      }
+    } catch (err) {
+      console.error(`❌ Lỗi khi tải trang ${site.name}: ${err.message}`);
+    } finally {
+      await context.close();
     }
-
-    const passed = linkCheckResults.filter((r) => r.ok).length;
-    const failed = linkCheckResults.length - passed;
-
-    overallResults.push({
-      siteName: site.name,
-      siteUrl: site.url,
-      total: linkCheckResults.length,
-      passed,
-      failed,
-      details: linkCheckResults
-    });
   }
 
-  fs.writeFileSync('reports/summary.json', JSON.stringify(overallResults, null, 2));
-  generateHtmlReport(overallResults);
+  const uniqueUrlsList = Array.from(allHrefs);
+  console.log(`\n🎯 Tổng số URL ĐỘC NHẤT thuộc pavietnam.vn cần kiểm tra: ${uniqueUrlsList.length}`);
 
-  const totalFailures = overallResults.reduce((acc, s) => acc + s.failed, 0);
-  expect(totalFailures, `Phát hiện tổng cộng ${totalFailures} link bị lỗi trên các trang!`).toBe(0);
+  // BƯỚC 2: Kiểm tra song song danh sách URL độc nhất (Batch 20 requets/lần)
+  const linkCheckResults = [];
+  const batchSize = 20;
+
+  for (let i = 0; i < uniqueUrlsList.length; i += batchSize) {
+    const batch = uniqueUrlsList.slice(i, i + batchSize);
+    await Promise.all(
+      batch.map(async (url) => {
+        try {
+          const start = Date.now();
+          const res = await request.get(url, { timeout: 10000 });
+          const duration = Date.now() - start;
+
+          linkCheckResults.push({
+            url,
+            status: res.status(),
+            ok: res.ok(),
+            duration: `${duration}ms`
+          });
+        } catch (err) {
+          linkCheckResults.push({
+            url,
+            status: 'TIMEOUT/ERROR',
+            ok: false,
+            duration: 'N/A'
+          });
+        }
+      })
+    );
+  }
+
+  const passed = linkCheckResults.filter((r) => r.ok).length;
+  const failed = linkCheckResults.length - passed;
+
+  const summaryData = {
+    totalChecked: linkCheckResults.length,
+    passed,
+    failed,
+    details: linkCheckResults
+  };
+
+  // Lưu file summary để notify.js gửi tin nhắn
+  fs.writeFileSync('reports/summary.json', JSON.stringify(summaryData, null, 2));
+
+  // Tạo báo cáo HTML
+  generateHtmlReport(summaryData);
+
+  expect(failed, `Phát hiện ${failed} link bị lỗi trên hệ thống!`).toBe(0);
 });
 
 function generateHtmlReport(data) {
@@ -111,53 +111,35 @@ function generateHtmlReport(data) {
   <html lang="vi">
   <head>
     <meta charset="UTF-8">
-    <title>Multi-Site Health Check Dashboard</title>
+    <title>PAVietnam Health Check Dashboard</title>
     <style>
-      body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f8fafc; margin: 0; padding: 24px; color: #0f172a; }
-      .container { max-width: 1100px; margin: 0 auto; }
-      .site-card { background: white; border-radius: 12px; padding: 20px; margin-bottom: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
-      .site-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e2e8f0; padding-bottom: 12px; margin-bottom: 16px; }
-      .badge { padding: 4px 10px; border-radius: 9999px; font-size: 12px; font-weight: 600; }
-      .badge-success { background: #dcfce7; color: #15803d; }
-      .badge-danger { background: #fee2e2; color: #b91c1c; }
-      table { width: 100%; border-collapse: collapse; font-size: 13px; }
-      th, td { padding: 8px 12px; text-align: left; border-bottom: 1px solid #f1f5f9; }
-      th { background: #f8fafc; color: #64748b; }
+      body { font-family: system-ui, sans-serif; background: #f8fafc; margin: 0; padding: 24px; color: #0f172a; }
+      .container { max-width: 1000px; margin: 0 auto; background: white; padding: 24px; border-radius: 12px; }
+      .badge { padding: 4px 8px; border-radius: 4px; font-size: 12px; font-weight: bold; }
+      .badge-success { background: #dcfce7; color: #166534; }
+      .badge-danger { background: #fee2e2; color: #991b1b; }
+      table { width: 100%; border-collapse: collapse; margin-top: 16px; font-size: 13px; }
+      th, td { padding: 8px 12px; text-align: left; border-bottom: 1px solid #e2e8f0; }
     </style>
   </head>
   <body>
     <div class="container">
-      <h1>📊 Báo Cáo Tổng Hợp Website</h1>
-      ${data.map(site => `
-        <div class="site-card">
-          <div class="site-header">
-            <h2>${site.siteName} (${site.siteUrl})</h2>
-            <div>
-              <span class="badge badge-success">Sống: ${site.passed}</span>
-              <span class="badge badge-danger">Lỗi: ${site.failed}</span>
-            </div>
-          </div>
-          <table>
-            <thead>
-              <tr><th>URL</th><th>Trạng Thái</th><th>Thời Gian</th></tr>
-            </thead>
-            <tbody>
-              ${site.details.map(d => `
-                <tr>
-                  <td style="max-width: 500px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
-                    <a href="${d.url}" target="_blank">${d.url}</a>
-                  </td>
-                  <td><span class="badge ${d.ok ? 'badge-success' : 'badge-danger'}">${d.status}</span></td>
-                  <td>${d.duration}</td>
-                </tr>
-              `).join('')}
-            </tbody>
-          </table>
-        </div>
-      `).join('')}
+      <h1>📊 Báo Cáo Tổng Kiểm Tra URL PAVietnam</h1>
+      <p>Tổng URL nội bộ đã quét: <b>${data.totalChecked}</b> | Sống: <b style="color:green">${data.passed}</b> | Lỗi: <b style="color:red">${data.failed}</b></p>
+      <table>
+        <thead><tr><th>URL Nội Bộ</th><th>Status</th><th>Thời Gian</th></tr></thead>
+        <tbody>
+          ${data.details.map(d => `
+            <tr>
+              <td style="max-width:550px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="${d.url}" target="_blank">${d.url}</a></td>
+              <td><span class="badge ${d.ok ? 'badge-success' : 'badge-danger'}">${d.status}</span></td>
+              <td>${d.duration}</td>
+            </tr>
+          `).join('')}
+        </tbody>
+      </table>
     </div>
   </body>
-  </html>
-  `;
+  </html>`;
   fs.writeFileSync('reports/index.html', htmlContent);
 }

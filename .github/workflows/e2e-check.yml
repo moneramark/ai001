@@ -3,7 +3,7 @@ name: Continuous Website Health Check
 on:
   schedule:
     # Chạy tự động lúc 00:00 UTC (07:00 sáng giờ VN) mỗi ngày
-    - cron: '0 0 * * *'
+    - cron: '0 */3 * * *'
   workflow_dispatch: # Cho phép kích hoạt thủ công từ giao diện GitHub
 
 jobs:

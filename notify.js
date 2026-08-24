@@ -20,55 +20,41 @@ async function sendTelegramMessage(text) {
 
 async function run() {
   if (!fs.existsSync('reports/summary.json')) {
-    await sendTelegramMessage('🚨 **Lỗi hệ thống:** Không tìm thấy dữ liệu kết quả kiểm tra.');
+    await sendTelegramMessage('🚨 **Lỗi:** Không tìm thấy tệp dữ liệu báo cáo summary.json');
     return;
   }
 
-  const rawData = fs.readFileSync('reports/summary.json');
-  const summaryData = JSON.parse(rawData);
-
+  const data = JSON.parse(fs.readFileSync('reports/summary.json'));
   const repo = process.env.GITHUB_REPOSITORY;
   const runId = process.env.GITHUB_RUN_ID;
   const runUrl = `https://github.com/${repo}/actions/runs/${runId}`;
 
-  let totalLinksChecked = 0;
-  let totalBrokenLinks = 0;
+  const isPassed = data.failed === 0;
+  const icon = isPassed ? '✅' : '🚨';
+  const statusText = isPassed ? 'TẤT CẢ LINK HOẠT ĐỘNG TỐT' : 'PHÁT HIỆN LINK LỖI';
 
-  let message = `📊 *BÁO CÁO KIỂM TRA ĐA WEBSITE*\n`;
-  message += `⏱ *Thời gian:* \`${new Date().toLocaleString('vi-VN', { timeZone: 'Asia/Ho_Chi_Minh' })}\`\n\n`;
+  let msg = `${icon} *BÁO CÁO KIỂM TRA PAVIETNAM* ${icon}\n\n`;
+  msg += `• *Trạng thái:* \`${statusText}\`\n`;
+  msg += `• *Thời gian:* \`${new Date().toLocaleString('vi-VN', { timeZone: 'Asia/Ho_Chi_Minh' })}\`\n`;
+  msg += `• *Tổng URL pavietnam.vn đã quét:* \`${data.totalChecked}\`\n`;
+  msg += `• *Link hoạt động (2xx/3xx):* \`${data.passed}\`\n`;
+  msg += `• *Link hỏng (4xx/5xx/Timeout):* \`${data.failed}\`\n\n`;
 
-  for (const site of summaryData) {
-    totalLinksChecked += site.total;
-    totalBrokenLinks += site.failed;
-
-    const statusIcon = site.failed === 0 ? '✅' : '🚨';
-    message += `${statusIcon} *${site.siteName}*\n`;
-    message += `• Tổng link đã quét: \`${site.total}\` | Thành công: \`${site.passed}\` | Lỗi: \`${site.failed}\`\n`;
-
-    // Nếu có link lỗi, liệt kê chi tiết danh sách link lỗi
-    if (site.failed > 0) {
-      message += `  ❌ *Danh sách Link bị lỗi:*\n`;
-      const failedLinks = site.details.filter((d) => !d.ok);
-      failedLinks.forEach((link, idx) => {
-        message += `    ${idx + 1}. [${link.status}] \`${link.url}\`\n`;
-      });
-    }
-    message += `\n`;
+  if (data.failed > 0) {
+    msg += `❌ *DANH SÁCH URL BỊ LỖI:*\n`;
+    const failedLinks = data.details.filter((d) => !d.ok);
+    failedLinks.forEach((item, idx) => {
+      msg += `${idx + 1}. [${item.status}] \`${item.url}\`\n`;
+    });
+    msg += `\n`;
   }
 
-  const headerStatus = totalBrokenLinks === 0 ? '🟢 ALL PASSED' : '🔴 ISSUES DETECTED';
-  message += `📌 *TỔNG KẾT:* \`${headerStatus}\`\n`;
-  message += `• Tổng số URL đã check: \`${totalLinksChecked}\`\n`;
-  message += `• Tổng số Link hỏng: \`${totalBrokenLinks}\`\n\n`;
-  message += `🔗 [Xem chi tiết Artifacts & Screenshots](${runUrl})`;
+  msg += `🔗 [Xem Ảnh Screenshot & Báo Cáo HTML](${runUrl})`;
 
-  // Nếu tin nhắn quá dài (giới hạn Telegram là 4096 ký tự), tự động cắt đôi
-  if (message.length > 4000) {
-    const half = Math.floor(message.length / 2);
-    await sendTelegramMessage(message.substring(0, half));
-    await sendTelegramMessage(message.substring(half));
+  if (msg.length > 4000) {
+    await sendTelegramMessage(msg.substring(0, 4000));
   } else {
-    await sendTelegramMessage(message);
+    await sendTelegramMessage(msg);
   }
 }
 
