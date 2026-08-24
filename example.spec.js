@@ -1,10 +1,10 @@
 import { test, expect } from '@playwright/test';
 import fs from 'fs';
-import sites from './sites.json' assert { type: 'json' };
 
-test('Kiểm tra nhiều trang web và quét toàn bộ liên kết', async ({ page, request }) => {
-  // Nâng thời gian timeout tối đa cho toàn bộ lượt test (5 phút)
-  test.setTimeout(300000);
+const sites = JSON.parse(fs.readFileSync('./sites.json', 'utf8'));
+
+test('Kiểm tra nhiều trang web và quét toàn bộ liên kết', async ({ browser, request }) => {
+  test.setTimeout(600000); // 10 phút timeout
 
   if (!fs.existsSync('reports')) fs.mkdirSync('reports');
 
@@ -13,9 +13,13 @@ test('Kiểm tra nhiều trang web và quét toàn bộ liên kết', async ({ p
   for (const site of sites) {
     console.log(`\n🔍 Đang quét trang: ${site.name} (${site.url})`);
 
+    // Tạo Tab mới độc lập cho từng trang
+    const context = await browser.newContext();
+    const page = await context.newPage();
+
     let pageLoaded = true;
     try {
-      await page.goto(site.url, { waitUntil: 'domcontentloaded', timeout: 35000 });
+      await page.goto(site.url, { waitUntil: 'domcontentloaded', timeout: 30000 });
     } catch (err) {
       pageLoaded = false;
       console.error(`❌ Không thể truy cập ${site.url}: ${err.message}`);
@@ -25,34 +29,34 @@ test('Kiểm tra nhiều trang web và quét toàn bộ liên kết', async ({ p
       overallResults.push({
         siteName: site.name,
         siteUrl: site.url,
-        status: 'CRITICAL_ERROR',
         total: 0,
         passed: 0,
         failed: 1,
-        details: [{ url: site.url, status: 'TIMEOUT/DOWN', ok: false }]
+        details: [{ url: site.url, status: 'DOWN/TIMEOUT', ok: false, duration: 'N/A' }]
       });
+      await context.close(); // Đóng tab
       continue;
     }
 
-    // Chụp ảnh màn hình cho từng trang
+    // Chụp ảnh màn hình
     const sanitizedName = site.name.replace(/[^a-z0-9]/gi, '_').toLowerCase();
     await page.screenshot({ path: `reports/${sanitizedName}.png`, fullPage: true });
 
-    // Lấy TOÀN BỘ danh sách liên kết trên trang
+    // Quét toàn bộ liên kết
     const hrefs = await page.locator('a[href]').evaluateAll((links) =>
       links
         .map((a) => a.getAttribute('href'))
         .filter((href) => href && !href.startsWith('#') && !href.startsWith('javascript:') && !href.startsWith('mailto:'))
     );
 
-    // Lọc trùng lặp URL
+    await context.close(); // Đóng tab sau khi thu thập xong link
+
     const uniqueHrefs = [...new Set(hrefs)];
-    console.log(`🔗 Tìm thấy ${uniqueHrefs.length} liên kết độc nhất trên ${site.name}`);
+    console.log(`🔗 Tìm thấy ${uniqueHrefs.length} liên kết trên ${site.name}`);
 
     const linkCheckResults = [];
+    const batchSize = 10; // Kiểm tra song song 10 link/lượt
 
-    // Kiểm tra đồng thời các link theo từng nhóm (batch 5 links/lần) để tối ưu thời gian
-    const batchSize = 5;
     for (let i = 0; i < uniqueHrefs.length; i += batchSize) {
       const batch = uniqueHrefs.slice(i, i + batchSize);
       await Promise.all(
@@ -94,15 +98,11 @@ test('Kiểm tra nhiều trang web và quét toàn bộ liên kết', async ({ p
     });
   }
 
-  // Ghi lại file summary để script notify.js đọc và gửi Telegram
   fs.writeFileSync('reports/summary.json', JSON.stringify(overallResults, null, 2));
-
-  // Tạo file báo cáo HTML trực quan tổng hợp
   generateHtmlReport(overallResults);
 
-  // Đánh dấu thất bại nếu có bất kỳ link lỗi nào trên các trang
   const totalFailures = overallResults.reduce((acc, s) => acc + s.failed, 0);
-  expect(totalFailures, `Phát hiện tổng cộng ${totalFailures} link bị lỗi trên tất cả các trang!`).toBe(0);
+  expect(totalFailures, `Phát hiện tổng cộng ${totalFailures} link bị lỗi trên các trang!`).toBe(0);
 });
 
 function generateHtmlReport(data) {
