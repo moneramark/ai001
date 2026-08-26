@@ -1,127 +1,124 @@
 {
-  "timestamp": "2026-08-26T03:52:15.460Z",
-  "sslInfo": {
-    "daysLeft": 161,
-    "validTo": "2027-02-02"
-  },
+  "timestamp": "2026-08-26T06:46:34.798Z",
+  "sslInfo": null,
   "visualAudit": [
     {
       "siteName": "Trang chủ",
       "url": "https://www.pavietnam.vn/vn/",
-      "status": 200,
-      "loadTimeMs": 908,
-      "screenshotPath": "reports/trang_ch_.png",
-      "isBlankPage": false,
+      "status": "TIMEOUT/LOAD_FAILED",
+      "loadTimeMs": 30009,
+      "screenshotPath": null,
+      "isBlankPage": true,
       "hasPhpError": false,
       "hasDatabaseError": false,
-      "consoleErrorCount": 1,
+      "consoleErrorCount": 0,
       "consoleErrors": [
-        "Failed to load resource: the server responded with a status of 404 ()"
+        "page.goto: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"https://www.pavietnam.vn/vn/\", waiting until \"domcontentloaded\"\u001b[22m\n"
       ],
       "failedRequestsCount": 0
     },
     {
       "siteName": "Hosting",
       "url": "https://www.pavietnam.vn/vn/hosting/",
-      "status": 200,
-      "loadTimeMs": 890,
-      "screenshotPath": "reports/hosting.png",
-      "isBlankPage": false,
+      "status": "TIMEOUT/LOAD_FAILED",
+      "loadTimeMs": 30012,
+      "screenshotPath": null,
+      "isBlankPage": true,
       "hasPhpError": false,
       "hasDatabaseError": false,
-      "consoleErrorCount": 1,
+      "consoleErrorCount": 0,
       "consoleErrors": [
-        "Failed to load resource: the server responded with a status of 404 ()"
+        "page.goto: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"https://www.pavietnam.vn/vn/hosting/\", waiting until \"domcontentloaded\"\u001b[22m\n"
       ],
       "failedRequestsCount": 0
     },
     {
       "siteName": "Server",
       "url": "https://www.pavietnam.vn/vn/server/",
-      "status": 200,
-      "loadTimeMs": 918,
-      "screenshotPath": "reports/server.png",
-      "isBlankPage": false,
+      "status": "TIMEOUT/LOAD_FAILED",
+      "loadTimeMs": 30004,
+      "screenshotPath": null,
+      "isBlankPage": true,
       "hasPhpError": false,
       "hasDatabaseError": false,
-      "consoleErrorCount": 1,
+      "consoleErrorCount": 0,
       "consoleErrors": [
-        "Failed to load resource: the server responded with a status of 404 ()"
+        "page.goto: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"https://www.pavietnam.vn/vn/server/\", waiting until \"domcontentloaded\"\u001b[22m\n"
       ],
       "failedRequestsCount": 0
     },
     {
       "siteName": "Website",
       "url": "https://www.pavietnam.vn/vn/website/",
-      "status": 200,
-      "loadTimeMs": 891,
-      "screenshotPath": "reports/website.png",
-      "isBlankPage": false,
+      "status": "TIMEOUT/LOAD_FAILED",
+      "loadTimeMs": 30028,
+      "screenshotPath": null,
+      "isBlankPage": true,
       "hasPhpError": false,
       "hasDatabaseError": false,
-      "consoleErrorCount": 1,
+      "consoleErrorCount": 0,
       "consoleErrors": [
-        "Failed to load resource: the server responded with a status of 404 ()"
+        "page.goto: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"https://www.pavietnam.vn/vn/website/\", waiting until \"domcontentloaded\"\u001b[22m\n"
       ],
       "failedRequestsCount": 0
     },
     {
       "siteName": "Email server",
       "url": "https://www.pavietnam.vn/vn/email-server/",
-      "status": 200,
-      "loadTimeMs": 892,
-      "screenshotPath": "reports/email_server.png",
-      "isBlankPage": false,
+      "status": "TIMEOUT/LOAD_FAILED",
+      "loadTimeMs": 30030,
+      "screenshotPath": null,
+      "isBlankPage": true,
       "hasPhpError": false,
       "hasDatabaseError": false,
-      "consoleErrorCount": 1,
+      "consoleErrorCount": 0,
       "consoleErrors": [
-        "Failed to load resource: the server responded with a status of 404 ()"
+        "page.goto: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"https://www.pavietnam.vn/vn/email-server/\", waiting until \"domcontentloaded\"\u001b[22m\n"
       ],
       "failedRequestsCount": 0
     },
     {
       "siteName": "Chứng chỉ SSL tls",
       "url": "https://www.pavietnam.vn/vn/chung-chi-ssl-tls/",
-      "status": 200,
-      "loadTimeMs": 895,
-      "screenshotPath": "reports/ch_ng_ch__ssl_tls.png",
-      "isBlankPage": false,
+      "status": "TIMEOUT/LOAD_FAILED",
+      "loadTimeMs": 30026,
+      "screenshotPath": null,
+      "isBlankPage": true,
       "hasPhpError": false,
       "hasDatabaseError": false,
-      "consoleErrorCount": 1,
+      "consoleErrorCount": 0,
       "consoleErrors": [
-        "Failed to load resource: the server responded with a status of 404 ()"
+        "page.goto: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"https://www.pavietnam.vn/vn/chung-chi-ssl-tls/\", waiting until \"domcontentloaded\"\u001b[22m\n"
       ],
       "failedRequestsCount": 0
     },
     {
       "siteName": "Tổng đài",
       "url": "https://www.pavietnam.vn/vn/tong-dai/",
-      "status": 200,
-      "loadTimeMs": 925,
-      "screenshotPath": "reports/t_ng___i.png",
-      "isBlankPage": false,
+      "status": "TIMEOUT/LOAD_FAILED",
+      "loadTimeMs": 30027,
+      "screenshotPath": null,
+      "isBlankPage": true,
       "hasPhpError": false,
       "hasDatabaseError": false,
-      "consoleErrorCount": 1,
+      "consoleErrorCount": 0,
       "consoleErrors": [
-        "Failed to load resource: the server responded with a status of 404 ()"
+        "page.goto: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"https://www.pavietnam.vn/vn/tong-dai/\", waiting until \"domcontentloaded\"\u001b[22m\n"
       ],
       "failedRequestsCount": 0
     },
     {
       "siteName": "E Hóa đơn",
       "url": "https://www.pavietnam.vn/vn/e-hoa-don/",
-      "status": 200,
-      "loadTimeMs": 891,
-      "screenshotPath": "reports/e_h_a___n.png",
-      "isBlankPage": false,
+      "status": "TIMEOUT/LOAD_FAILED",
+      "loadTimeMs": 30010,
+      "screenshotPath": null,
+      "isBlankPage": true,
       "hasPhpError": false,
       "hasDatabaseError": false,
-      "consoleErrorCount": 1,
+      "consoleErrorCount": 0,
       "consoleErrors": [
-        "Failed to load resource: the server responded with a status of 404 ()"
+        "page.goto: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"https://www.pavietnam.vn/vn/e-hoa-don/\", waiting until \"domcontentloaded\"\u001b[22m\n"
       ],
       "failedRequestsCount": 0
     }
