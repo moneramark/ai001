@@ -1,15 +1,12 @@
 {
-  "timestamp": "2026-09-04T02:49:07.201Z",
-  "sslInfo": {
-    "daysLeft": 163,
-    "validTo": "2027-02-13"
-  },
+  "timestamp": "2026-09-04T07:43:55.663Z",
+  "sslInfo": null,
   "visualAudit": [
     {
       "siteName": "Trang chủ",
       "url": "https://www.pavietnam.vn/vn/",
       "status": 200,
-      "loadTimeMs": 4753,
+      "loadTimeMs": 3477,
       "screenshotPath": "reports/trang_ch_.png",
       "isBlankPage": false,
       "hasPhpError": false,
@@ -22,7 +19,7 @@
       "siteName": "Hosting",
       "url": "https://www.pavietnam.vn/vn/hosting/",
       "status": 200,
-      "loadTimeMs": 4359,
+      "loadTimeMs": 3170,
       "screenshotPath": "reports/hosting.png",
       "isBlankPage": false,
       "hasPhpError": false,
@@ -35,7 +32,7 @@
       "siteName": "Server",
       "url": "https://www.pavietnam.vn/vn/server/",
       "status": 200,
-      "loadTimeMs": 5194,
+      "loadTimeMs": 3276,
       "screenshotPath": "reports/server.png",
       "isBlankPage": false,
       "hasPhpError": false,
@@ -48,26 +45,20 @@
       "siteName": "Website",
       "url": "https://www.pavietnam.vn/vn/website/",
       "status": 200,
-      "loadTimeMs": 4247,
+      "loadTimeMs": 3135,
       "screenshotPath": "reports/website.png",
       "isBlankPage": false,
       "hasPhpError": false,
       "hasDatabaseError": false,
-      "consoleErrorCount": 5,
-      "consoleErrors": [
-        "Failed to load resource: the server responded with a status of 403 ()",
-        "Failed to load resource: the server responded with a status of 403 ()",
-        "Failed to load resource: the server responded with a status of 403 ()",
-        "Failed to load resource: the server responded with a status of 403 ()",
-        "Failed to load resource: the server responded with a status of 403 ()"
-      ],
-      "failedRequestsCount": 17
+      "consoleErrorCount": 0,
+      "consoleErrors": [],
+      "failedRequestsCount": 12
     },
     {
       "siteName": "Email server",
       "url": "https://www.pavietnam.vn/vn/email-server/",
       "status": 200,
-      "loadTimeMs": 5300,
+      "loadTimeMs": 3135,
       "screenshotPath": "reports/email_server.png",
       "isBlankPage": false,
       "hasPhpError": false,
@@ -80,7 +71,7 @@
       "siteName": "Chứng chỉ SSL tls",
       "url": "https://www.pavietnam.vn/vn/chung-chi-ssl-tls/",
       "status": 200,
-      "loadTimeMs": 4778,
+      "loadTimeMs": 3156,
       "screenshotPath": "reports/ch_ng_ch__ssl_tls.png",
       "isBlankPage": false,
       "hasPhpError": false,
@@ -93,20 +84,20 @@
       "siteName": "Tổng đài",
       "url": "https://www.pavietnam.vn/vn/tong-dai/",
       "status": 200,
-      "loadTimeMs": 4203,
+      "loadTimeMs": 3622,
       "screenshotPath": "reports/t_ng___i.png",
       "isBlankPage": false,
       "hasPhpError": false,
       "hasDatabaseError": false,
       "consoleErrorCount": 0,
       "consoleErrors": [],
-      "failedRequestsCount": 12
+      "failedRequestsCount": 11
     },
     {
       "siteName": "E Hóa đơn",
       "url": "https://www.pavietnam.vn/vn/e-hoa-don/",
       "status": 200,
-      "loadTimeMs": 4135,
+      "loadTimeMs": 3327,
       "screenshotPath": "reports/e_h_a___n.png",
       "isBlankPage": false,
       "hasPhpError": false,
@@ -116,861 +107,843 @@
       "failedRequestsCount": 12
     }
   ],
-  "totalChecked": 225,
-  "passed": 189,
-  "failed": 36,
+  "totalChecked": 222,
+  "passed": 197,
+  "failed": 25,
   "details": [
     {
       "url": "https://support.pavietnam.vn/",
       "status": 200,
       "ok": true,
-      "duration": "1290ms"
+      "duration": "1240ms"
     },
     {
       "url": "https://support.pavietnam.vn/?redirect=https%3A%2F%2Fwww.pavietnam.vn%2Fvn%2F",
       "status": 200,
       "ok": true,
-      "duration": "1343ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/uu-dai-tong-hop.html",
-      "status": 200,
-      "ok": true,
-      "duration": "2043ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/ten-mien-thuong-hieu.html",
-      "status": 200,
-      "ok": true,
-      "duration": "2101ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/ten-mien-tu-do.html",
-      "status": 200,
-      "ok": true,
-      "duration": "2101ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/ten-mien/bao-mat-ten-mien",
-      "status": 200,
-      "ok": true,
-      "duration": "2106ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/ten-mien/tim-kiem-ten-mien",
-      "status": 200,
-      "ok": true,
-      "duration": "2177ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/checkout.html",
-      "status": 200,
-      "ok": true,
-      "duration": "2356ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/uu-dai-tong-hop.html?utm_source=popup&utm_medium=homepage-pa&utm_campaign=uu-dai-quoc-khanh-2-9-popup-homepage-pa&utm_term=uu-dai-quoc-khanh-2-9",
-      "status": 200,
-      "ok": true,
-      "duration": "2918ms"
+      "duration": "1327ms"
     },
     {
       "url": "https://www.pavietnam.vn/vn/ten-mien/tien-ich-dns",
       "status": 200,
       "ok": true,
-      "duration": "3246ms"
+      "duration": "4290ms"
     },
     {
-      "url": "https://www.pavietnam.vn/vn/bao-mat-thong-tin-ten-mien-id-protect.html",
+      "url": "https://www.pavietnam.vn/vn/ten-mien/bao-mat-ten-mien",
       "status": 200,
       "ok": true,
-      "duration": "3295ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/ten-mien-mien-phi.html",
-      "status": 200,
-      "ok": true,
-      "duration": "3338ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/ten-mien/chuyen-ten-mien-ve-pa",
-      "status": 200,
-      "ok": true,
-      "duration": "3523ms"
+      "duration": "4327ms"
     },
     {
       "url": "https://www.pavietnam.vn/vn/ten-mien/chuyen-nhuong-ten-mien",
       "status": 200,
       "ok": true,
-      "duration": "3531ms"
+      "duration": "4327ms"
     },
     {
-      "url": "https://www.pavietnam.vn/vn/signout.html",
+      "url": "https://www.pavietnam.vn/vn/ten-mien-tu-do.html",
       "status": 200,
       "ok": true,
-      "duration": "3793ms"
+      "duration": "4331ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/uu-dai-tong-hop.html",
+      "status": 200,
+      "ok": true,
+      "duration": "4340ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/ten-mien/chuyen-ten-mien-ve-pa",
+      "status": 200,
+      "ok": true,
+      "duration": "4335ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/ten-mien-bang-gia.html",
+      "status": 200,
+      "ok": true,
+      "duration": "4339ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/uu-dai-tong-hop.html?utm_source=popup&utm_medium=homepage-pa&utm_campaign=uu-dai-quoc-khanh-2-9-popup-homepage-pa&utm_term=uu-dai-quoc-khanh-2-9",
+      "status": 200,
+      "ok": true,
+      "duration": "4356ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/ten-mien-mien-phi.html",
+      "status": 200,
+      "ok": true,
+      "duration": "4349ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/ten-mien-thuong-hieu.html",
+      "status": 200,
+      "ok": true,
+      "duration": "4352ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/ten-mien/tim-kiem-ten-mien",
+      "status": 200,
+      "ok": true,
+      "duration": "4424ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/checkout.html",
+      "status": 200,
+      "ok": true,
+      "duration": "4658ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/bao-mat-thong-tin-ten-mien-id-protect.html",
+      "status": 200,
+      "ok": true,
+      "duration": "5424ms"
     },
     {
       "url": "https://www.pavietnam.vn/vn/",
       "status": 200,
       "ok": true,
-      "duration": "3879ms"
+      "duration": "5468ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/signout.html",
+      "status": 200,
+      "ok": true,
+      "duration": "5483ms"
     },
     {
       "url": "https://www.pavietnam.vn/en/",
       "status": 200,
       "ok": true,
-      "duration": "4599ms"
+      "duration": "5509ms"
     },
     {
       "url": "https://www.pavietnam.vn/vn/ten-mien/",
       "status": 200,
       "ok": true,
-      "duration": "6055ms"
+      "duration": "6859ms"
     },
     {
       "url": "https://www.pavietnam.vn/vn/dang-ky-ten-mien.html",
       "status": 200,
       "ok": true,
-      "duration": "8331ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/ten-mien-bang-gia.html",
-      "status": "TIMEOUT/ERROR",
-      "ok": false,
-      "duration": "N/A"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/website/xay-dung-website",
-      "status": 200,
-      "ok": true,
-      "duration": "1296ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/hosting/web-hosting-nodejs",
-      "status": 200,
-      "ok": true,
-      "duration": "1995ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/hosting/wordpress",
-      "status": 200,
-      "ok": true,
-      "duration": "2616ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/server/nodejs",
-      "status": 200,
-      "ok": true,
-      "duration": "3143ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/hosting/business-hosting",
-      "status": 200,
-      "ok": true,
-      "duration": "3447ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/hosting/",
-      "status": 200,
-      "ok": true,
-      "duration": "3706ms"
+      "duration": "8958ms"
     },
     {
       "url": "https://www.pavietnam.vn/vn/hosting/enterprise-hosting",
       "status": 200,
       "ok": true,
-      "duration": "3980ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/server/python",
-      "status": 200,
-      "ok": true,
-      "duration": "4301ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/server/cloud-server",
-      "status": 200,
-      "ok": true,
-      "duration": "4532ms"
+      "duration": "1013ms"
     },
     {
       "url": "https://www.pavietnam.vn/vn/hosting/vibe-coding-hosting",
       "status": 200,
       "ok": true,
-      "duration": "5174ms"
+      "duration": "1427ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/hosting/business-hosting",
+      "status": 200,
+      "ok": true,
+      "duration": "1697ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/hosting/",
+      "status": 200,
+      "ok": true,
+      "duration": "1963ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/server/python",
+      "status": 200,
+      "ok": true,
+      "duration": "2242ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/hosting/wordpress",
+      "status": 200,
+      "ok": true,
+      "duration": "2716ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/hosting/web-hosting-nodejs",
+      "status": 200,
+      "ok": true,
+      "duration": "2969ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/website/ai-content-pro",
+      "status": 200,
+      "ok": true,
+      "duration": "3099ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/sao-luu-du-lieu-may-chu",
+      "status": 200,
+      "ok": true,
+      "duration": "3580ms"
     },
     {
       "url": "https://www.pavietnam.vn/vn/website/",
       "status": 200,
       "ok": true,
-      "duration": "5431ms"
+      "duration": "3841ms"
     },
     {
-      "url": "https://www.pavietnam.vn/vn/website/cham-soc-website",
+      "url": "https://www.pavietnam.vn/vn/cdn30s",
       "status": 200,
       "ok": true,
-      "duration": "5677ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/server/",
-      "status": 200,
-      "ok": true,
-      "duration": "5982ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/server/virtual-private-cloud",
-      "status": 200,
-      "ok": true,
-      "duration": "6780ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/server/dedicated-server",
-      "status": 200,
-      "ok": true,
-      "duration": "8836ms"
+      "duration": "4118ms"
     },
     {
       "url": "https://www.pavietnam.vn/vn/dich-vu-dang-ky-website-voi-bo-cong-thuong",
       "status": 200,
       "ok": true,
-      "duration": "9055ms"
+      "duration": "4420ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/server/dedicated-server",
+      "status": 200,
+      "ok": true,
+      "duration": "4670ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/server/",
+      "status": 200,
+      "ok": true,
+      "duration": "4935ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/website/xay-dung-website",
+      "status": 200,
+      "ok": true,
+      "duration": "5408ms"
     },
     {
       "url": "https://www.pavietnam.vn/vn/server/co-location",
       "status": 200,
       "ok": true,
-      "duration": "9935ms"
+      "duration": "6218ms"
     },
     {
-      "url": "https://www.pavietnam.vn/vn/sao-luu-du-lieu-may-chu",
-      "status": "TIMEOUT/ERROR",
-      "ok": false,
-      "duration": "N/A"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/website/ai-content-pro",
-      "status": "TIMEOUT/ERROR",
-      "ok": false,
-      "duration": "N/A"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/cdn30s",
-      "status": "TIMEOUT/ERROR",
-      "ok": false,
-      "duration": "N/A"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/server/cloud-drive30s",
+      "url": "https://www.pavietnam.vn/vn/server/cloud-server",
       "status": 200,
       "ok": true,
-      "duration": "1587ms"
+      "duration": "6496ms"
     },
     {
-      "url": "https://www.pavietnam.vn/vn/email-server/may-chu-email-cho-doanh-nghiep",
+      "url": "https://www.pavietnam.vn/vn/server/nodejs",
       "status": 200,
       "ok": true,
-      "duration": "1892ms"
+      "duration": "6946ms"
     },
     {
-      "url": "https://www.pavietnam.vn/vn/biz30s",
+      "url": "https://www.pavietnam.vn/vn/website/cham-soc-website",
       "status": 200,
       "ok": true,
-      "duration": "2002ms"
+      "duration": "7289ms"
     },
     {
-      "url": "https://www.pavietnam.vn/vn/hybrid-email",
+      "url": "https://www.pavietnam.vn/vn/server/virtual-private-cloud",
       "status": 200,
       "ok": true,
-      "duration": "2531ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/email-server/google-workspace",
-      "status": 200,
-      "ok": true,
-      "duration": "2955ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/quan-tri-email",
-      "status": 200,
-      "ok": true,
-      "duration": "3303ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/elasticcached",
-      "status": 200,
-      "ok": true,
-      "duration": "3664ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/email-server/",
-      "status": 200,
-      "ok": true,
-      "duration": "3957ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/bo-tiep-thi-ky-thuat-so",
-      "status": 200,
-      "ok": true,
-      "duration": "4266ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/email-antispam-protection",
-      "status": 200,
-      "ok": true,
-      "duration": "4690ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/google-adwords",
-      "status": 200,
-      "ok": true,
-      "duration": "5050ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/chu-ky-email",
-      "status": 200,
-      "ok": true,
-      "duration": "5379ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/email-marketing",
-      "status": 200,
-      "ok": true,
-      "duration": "5751ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/server/quan-tri-may-chu",
-      "status": 200,
-      "ok": true,
-      "duration": "6186ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/chu-ky-so-email",
-      "status": 200,
-      "ok": true,
-      "duration": "6601ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/sao-luu-du-lieu-email",
-      "status": 200,
-      "ok": true,
-      "duration": "7157ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/facebook-ads",
-      "status": 200,
-      "ok": true,
-      "duration": "7714ms"
+      "duration": "8270ms"
     },
     {
       "url": "https://www.pavietnam.vn/vn/giai-phap-can-bang-tai",
       "status": 200,
       "ok": true,
-      "duration": "8042ms"
+      "duration": "1056ms"
     },
     {
-      "url": "https://www.pavietnam.vn/vn/email-server/giai-phap-email",
+      "url": "https://www.pavietnam.vn/vn/bo-tiep-thi-ky-thuat-so",
       "status": 200,
       "ok": true,
-      "duration": "8051ms"
+      "duration": "1837ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/server/cloud-drive30s",
+      "status": 200,
+      "ok": true,
+      "duration": "2095ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/facebook-ads",
+      "status": 200,
+      "ok": true,
+      "duration": "2125ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/elasticcached",
+      "status": 200,
+      "ok": true,
+      "duration": "2468ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/biz30s",
+      "status": 200,
+      "ok": true,
+      "duration": "2544ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/quan-tri-email",
+      "status": 200,
+      "ok": true,
+      "duration": "3121ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/server/quan-tri-may-chu",
+      "status": 200,
+      "ok": true,
+      "duration": "3434ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/chu-ky-so-email",
+      "status": 200,
+      "ok": true,
+      "duration": "3810ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/email-server/",
+      "status": 200,
+      "ok": true,
+      "duration": "4056ms"
     },
     {
       "url": "https://www.pavietnam.vn/vn/email-server/microsoft-365",
       "status": 200,
       "ok": true,
-      "duration": "8348ms"
+      "duration": "4305ms"
     },
     {
-      "url": "https://www.pavietnam.vn/vn/e-hoa-don/chu-ky-so",
+      "url": "https://www.pavietnam.vn/vn/email-server/giai-phap-email",
       "status": 200,
       "ok": true,
-      "duration": "1097ms"
+      "duration": "4551ms"
     },
     {
-      "url": "https://www.pavietnam.vn/vn/chung-chi-ssl-tls/ssl-automation",
+      "url": "https://www.pavietnam.vn/vn/sao-luu-du-lieu-email",
       "status": 200,
       "ok": true,
-      "duration": "1377ms"
+      "duration": "4871ms"
     },
     {
-      "url": "https://www.pavietnam.vn/vn/e-hoa-don/truyen-nhan-luu-tru-hoa-don",
+      "url": "https://www.pavietnam.vn/vn/hybrid-email",
       "status": 200,
       "ok": true,
-      "duration": "1814ms"
+      "duration": "5150ms"
     },
     {
-      "url": "https://www.pavietnam.vn/vn/direct-admin.html",
+      "url": "https://www.pavietnam.vn/vn/email-antispam-protection",
       "status": 200,
       "ok": true,
-      "duration": "2159ms"
+      "duration": "5489ms"
     },
     {
-      "url": "https://www.pavietnam.vn/vn/e-hoa-don/phan-mem-hoa-don-dien-tu",
+      "url": "https://www.pavietnam.vn/vn/chu-ky-email",
       "status": 200,
       "ok": true,
-      "duration": "4980ms"
+      "duration": "5826ms"
     },
     {
-      "url": "https://www.pavietnam.vn/vn/e-hoa-don/",
+      "url": "https://www.pavietnam.vn/vn/email-server/google-workspace",
       "status": 200,
       "ok": true,
-      "duration": "5020ms"
+      "duration": "6245ms"
     },
     {
-      "url": "https://www.pavietnam.vn/vn/chung-chi-ssl-tls/",
+      "url": "https://www.pavietnam.vn/vn/google-adwords",
       "status": 200,
       "ok": true,
-      "duration": "5263ms"
+      "duration": "6506ms"
     },
     {
-      "url": "https://www.pavietnam.vn/vn/bao-mat-website",
+      "url": "https://www.pavietnam.vn/vn/email-marketing",
       "status": 200,
       "ok": true,
-      "duration": "5587ms"
+      "duration": "6862ms"
     },
     {
-      "url": "https://www.pavietnam.vn/vn/tong-dai/",
+      "url": "https://www.pavietnam.vn/vn/email-server/may-chu-email-cho-doanh-nghiep",
       "status": 200,
       "ok": true,
-      "duration": "5885ms"
+      "duration": "7656ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/sms-brandname",
+      "status": 200,
+      "ok": true,
+      "duration": "483ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/chung-chi-ssl-tls/sectigo",
+      "status": 200,
+      "ok": true,
+      "duration": "1552ms"
     },
     {
       "url": "https://www.pavietnam.vn/vn/website/thiet-ke-logo",
       "status": 200,
       "ok": true,
-      "duration": "6171ms"
+      "duration": "1801ms"
     },
     {
-      "url": "https://www.pavietnam.vn/vn/sms-brandname",
-      "status": "TIMEOUT/ERROR",
-      "ok": false,
-      "duration": "N/A"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/website/thiet-ke-banner",
-      "status": "TIMEOUT/ERROR",
-      "ok": false,
-      "duration": "N/A"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/chung-chi-ssl-tls/sectigo",
-      "status": "TIMEOUT/ERROR",
-      "ok": false,
-      "duration": "N/A"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/chung-chi-ssl-tls/sectigo-comodo",
-      "status": "TIMEOUT/ERROR",
-      "ok": false,
-      "duration": "N/A"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/chung-chi-ssl-tls/rapid-geotrust",
-      "status": "TIMEOUT/ERROR",
-      "ok": false,
-      "duration": "N/A"
+      "url": "https://www.pavietnam.vn/vn/e-hoa-don/phan-mem-hoa-don-dien-tu",
+      "status": 200,
+      "ok": true,
+      "duration": "3852ms"
     },
     {
       "url": "https://www.pavietnam.vn/vn/chung-chi-ssl-tls/digicert",
-      "status": "TIMEOUT/ERROR",
-      "ok": false,
-      "duration": "N/A"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/chung-chi-ssl-tls/thawte",
-      "status": "TIMEOUT/ERROR",
-      "ok": false,
-      "duration": "N/A"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/webguard.html",
-      "status": "TIMEOUT/ERROR",
-      "ok": false,
-      "duration": "N/A"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/cloudbric-waf.html",
-      "status": "TIMEOUT/ERROR",
-      "ok": false,
-      "duration": "N/A"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/tong-dai/tong-dai-ao",
-      "status": "TIMEOUT/ERROR",
-      "ok": false,
-      "duration": "N/A"
-    },
-    {
-      "url": "https://support.pavietnam.vn/index.php?pa=service&flag=1&flag_id=0&type=",
-      "status": 200,
-      "ok": true,
-      "duration": "1269ms"
-    },
-    {
-      "url": "https://support.pavietnam.vn/index.php?pa=myorder",
-      "status": 200,
-      "ok": true,
-      "duration": "1503ms"
-    },
-    {
-      "url": "https://support.pavietnam.vn/index.php?pa=profile",
-      "status": 200,
-      "ok": true,
-      "duration": "1866ms"
-    },
-    {
-      "url": "https://support.pavietnam.vn/index.php?pa=binding_payment",
-      "status": 200,
-      "ok": true,
-      "duration": "2177ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/cloud-linux.html",
-      "status": 200,
-      "ok": true,
-      "duration": "2858ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/kernelcare.html",
-      "status": 200,
-      "ok": true,
-      "duration": "3316ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/whmcs.html",
-      "status": 200,
-      "ok": true,
-      "duration": "3718ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/360-monitoring.html",
-      "status": 200,
-      "ok": true,
-      "duration": "4046ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/hosting-controller.html",
-      "status": 200,
-      "ok": true,
-      "duration": "4363ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/ten-mien-asia.html",
-      "status": 200,
-      "ok": true,
-      "duration": "4624ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/ten-mien-click.html",
-      "status": 200,
-      "ok": true,
-      "duration": "4912ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/lite-speed.html",
-      "status": 200,
-      "ok": true,
-      "duration": "5486ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/uu-dai-tong-hop.html#sec-web",
-      "status": 200,
-      "ok": true,
-      "duration": "5788ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/uu-dai-tong-hop.html#sec-hosting",
-      "status": 200,
-      "ok": true,
-      "duration": "6025ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/ten-mien-xyz.html",
-      "status": 200,
-      "ok": true,
-      "duration": "6319ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/uu-dai-tong-hop.html#sec-tongdai",
-      "status": 200,
-      "ok": true,
-      "duration": "6613ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/imunify360-security-soft.html",
-      "status": 200,
-      "ok": true,
-      "duration": "7025ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/tong-dai/tong-dai-dien-thoai-so#packages",
-      "status": 200,
-      "ok": true,
-      "duration": "7481ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/cpanel.html",
-      "status": 200,
-      "ok": true,
-      "duration": "8215ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/uu-dai-tong-hop.html#sec-hoadon",
-      "status": 200,
-      "ok": true,
-      "duration": "8468ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/tin-tuc-pa-viet-nam-dong-hanh-cung-vnnic-internet-conference-2026-san-sang-ha-tang-ipv6.html",
-      "status": 200,
-      "ok": true,
-      "duration": "1386ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/ten-mien-site.html",
-      "status": 200,
-      "ok": true,
-      "duration": "1661ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/ten-mien-online.html",
-      "status": 200,
-      "ok": true,
-      "duration": "2098ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/ten-mien-info.html",
-      "status": 200,
-      "ok": true,
-      "duration": "2365ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/uu-dai-ten-mien-viet-nam.html",
-      "status": 200,
-      "ok": true,
-      "duration": "2595ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/ten-mien-one.html",
-      "status": 200,
-      "ok": true,
-      "duration": "3056ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/tin-tuc-pa-viet-nam-dong-hanh-cung-ngay-hoi-diem-cham-so.html",
-      "status": 200,
-      "ok": true,
-      "duration": "3330ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/ten-mien-cloud.html",
-      "status": 200,
-      "ok": true,
-      "duration": "3606ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/tin-tuc-huong-dan-quy-trinh-dau-gia-ten-mien-vn-dot-2.html",
-      "status": 200,
-      "ok": true,
-      "duration": "3814ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/ten-mien-top.html",
-      "status": 200,
-      "ok": true,
-      "duration": "4109ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/tong-dai/tong-dai-dien-thoai-so",
-      "status": 200,
-      "ok": true,
-      "duration": "4526ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/wordpress.html",
-      "status": 200,
-      "ok": true,
-      "duration": "4771ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/tin-tuc-pa-viet-nam-dong-hanh-chuyen-doi-so-ho-kinh-doanh-va-cua-hang.html",
-      "status": 200,
-      "ok": true,
-      "duration": "5038ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/hosting/web-hosting",
-      "status": 200,
-      "ok": true,
-      "duration": "5460ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/ten-mien-store.html",
-      "status": 200,
-      "ok": true,
-      "duration": "5862ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/ten-mien-org.html",
-      "status": 200,
-      "ok": true,
-      "duration": "6280ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/tin-tuc-pa-viet-nam-dong-hanh-cung-ho-kinh-doanh-bac-ninh-voi-ten-mien-bizvn-va-web30s.html",
-      "status": 200,
-      "ok": true,
-      "duration": "6713ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/email-server.html",
-      "status": 200,
-      "ok": true,
-      "duration": "6928ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/tong-dai/tong-dai-chat",
-      "status": 200,
-      "ok": true,
-      "duration": "7973ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/hosting.html",
-      "status": 200,
-      "ok": true,
-      "duration": "8203ms"
-    },
-    {
-      "url": "https://kb.pavietnam.vn/huong-dan-cau-hinh-schema-cho-website-tren-web30s.html",
-      "status": 468,
-      "ok": false,
-      "duration": "1025ms"
-    },
-    {
-      "url": "https://kb.pavietnam.vn/loi-rsync-giua-hai-server-linux-khac-phien-ban.html",
-      "status": 468,
-      "ok": false,
-      "duration": "1028ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/thoa-thuan-su-dung/",
-      "status": 200,
-      "ok": true,
-      "duration": "1027ms"
-    },
-    {
-      "url": "https://kb.pavietnam.vn/dong-bo-lich-outlook-caldav-synchronizer.html",
-      "status": 468,
-      "ok": false,
-      "duration": "1240ms"
-    },
-    {
-      "url": "https://kb.pavietnam.vn/web30s-addon-website-under-construction.html",
-      "status": 468,
-      "ok": false,
-      "duration": "1287ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/tuyen-dung.html",
-      "status": 200,
-      "ok": true,
-      "duration": "1412ms"
-    },
-    {
-      "url": "https://kb.pavietnam.vn/huong-dan-su-dung-mail-private-domain-admin.html",
-      "status": 468,
-      "ok": false,
-      "duration": "1484ms"
-    },
-    {
-      "url": "https://kb.pavietnam.vn/van-ban-phap-ly.html",
-      "status": 468,
-      "ok": false,
-      "duration": "1538ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/bao-cao-lam-dung.html",
-      "status": 200,
-      "ok": true,
-      "duration": "1666ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/gioi-thieu.html",
-      "status": 200,
-      "ok": true,
-      "duration": "1944ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/tin-tuc-pa/",
-      "status": 200,
-      "ok": true,
-      "duration": "2193ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/cach-thanh-toan.html",
-      "status": 200,
-      "ok": true,
-      "duration": "2510ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/lien-he.html",
-      "status": 200,
-      "ok": true,
-      "duration": "2583ms"
-    },
-    {
-      "url": "https://event.pavietnam.vn/",
-      "status": 200,
-      "ok": true,
-      "duration": "2788ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/vipcard.html",
-      "status": 200,
-      "ok": true,
-      "duration": "3127ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/bang-gia-doi-tac.html",
-      "status": 200,
-      "ok": true,
-      "duration": "3492ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/danh-muc-san-pham/",
-      "status": 200,
-      "ok": true,
-      "duration": "3806ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/tin-cong-nghe/",
-      "status": 200,
-      "ok": true,
-      "duration": "4103ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/bieu-mau-ho-so/",
       "status": 200,
       "ok": true,
       "duration": "4437ms"
     },
     {
-      "url": "https://www.pavietnam.vn/vn/doi-qua.html",
+      "url": "https://www.pavietnam.vn/vn/chung-chi-ssl-tls/ssl-automation",
       "status": 200,
       "ok": true,
-      "duration": "5033ms"
+      "duration": "4685ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/tong-dai/",
+      "status": 200,
+      "ok": true,
+      "duration": "4923ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/e-hoa-don/chu-ky-so",
+      "status": 200,
+      "ok": true,
+      "duration": "5275ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/chung-chi-ssl-tls/rapid-geotrust",
+      "status": 200,
+      "ok": true,
+      "duration": "5532ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/website/thiet-ke-banner",
+      "status": 200,
+      "ok": true,
+      "duration": "5826ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/direct-admin.html",
+      "status": 200,
+      "ok": true,
+      "duration": "6076ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/e-hoa-don/truyen-nhan-luu-tru-hoa-don",
+      "status": 200,
+      "ok": true,
+      "duration": "6518ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/chung-chi-ssl-tls/thawte",
+      "status": 200,
+      "ok": true,
+      "duration": "7025ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/e-hoa-don/",
+      "status": 200,
+      "ok": true,
+      "duration": "7537ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/tong-dai/tong-dai-ao",
+      "status": 200,
+      "ok": true,
+      "duration": "8191ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/chung-chi-ssl-tls/",
+      "status": 200,
+      "ok": true,
+      "duration": "8474ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/cloudbric-waf.html",
+      "status": 200,
+      "ok": true,
+      "duration": "8722ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/webguard.html",
+      "status": 200,
+      "ok": true,
+      "duration": "8759ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/bao-mat-website",
+      "status": 200,
+      "ok": true,
+      "duration": "9297ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/chung-chi-ssl-tls/sectigo-comodo",
+      "status": 200,
+      "ok": true,
+      "duration": "9579ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/hosting-controller.html",
+      "status": 200,
+      "ok": true,
+      "duration": "782ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/cloud-linux.html",
+      "status": 200,
+      "ok": true,
+      "duration": "1073ms"
+    },
+    {
+      "url": "https://support.pavietnam.vn/index.php?pa=myorder",
+      "status": 200,
+      "ok": true,
+      "duration": "1504ms"
+    },
+    {
+      "url": "https://support.pavietnam.vn/index.php?pa=service&flag=1&flag_id=0&type=",
+      "status": 200,
+      "ok": true,
+      "duration": "1746ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/cpanel.html",
+      "status": 200,
+      "ok": true,
+      "duration": "1882ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/uu-dai-tong-hop.html#sec-hosting",
+      "status": 200,
+      "ok": true,
+      "duration": "2151ms"
+    },
+    {
+      "url": "https://support.pavietnam.vn/index.php?pa=profile",
+      "status": 200,
+      "ok": true,
+      "duration": "2432ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/360-monitoring.html",
+      "status": 200,
+      "ok": true,
+      "duration": "2564ms"
+    },
+    {
+      "url": "https://support.pavietnam.vn/index.php?pa=binding_payment",
+      "status": 200,
+      "ok": true,
+      "duration": "2715ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/ten-mien-click.html",
+      "status": 200,
+      "ok": true,
+      "duration": "2788ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/uu-dai-tong-hop.html#sec-tongdai",
+      "status": 200,
+      "ok": true,
+      "duration": "3108ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/uu-dai-tong-hop.html#sec-web",
+      "status": 200,
+      "ok": true,
+      "duration": "3356ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/uu-dai-tong-hop.html#sec-hoadon",
+      "status": 200,
+      "ok": true,
+      "duration": "3577ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/lite-speed.html",
+      "status": 200,
+      "ok": true,
+      "duration": "3998ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/kernelcare.html",
+      "status": 200,
+      "ok": true,
+      "duration": "4268ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/imunify360-security-soft.html",
+      "status": 200,
+      "ok": true,
+      "duration": "4625ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/ten-mien-xyz.html",
+      "status": 200,
+      "ok": true,
+      "duration": "4996ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/ten-mien-asia.html",
+      "status": 200,
+      "ok": true,
+      "duration": "5218ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/whmcs.html",
+      "status": 200,
+      "ok": true,
+      "duration": "5542ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/tong-dai/tong-dai-dien-thoai-so#packages",
+      "status": 200,
+      "ok": true,
+      "duration": "5940ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/ten-mien-cloud.html",
+      "status": 200,
+      "ok": true,
+      "duration": "1004ms"
+    },
+    {
+      "url": "https://kb.pavietnam.vn/huong-dan-cau-hinh-schema-cho-website-tren-web30s.html",
+      "status": 468,
+      "ok": false,
+      "duration": "999ms"
+    },
+    {
+      "url": "https://kb.pavietnam.vn/loi-rsync-giua-hai-server-linux-khac-phien-ban.html",
+      "status": 468,
+      "ok": false,
+      "duration": "1025ms"
+    },
+    {
+      "url": "https://kb.pavietnam.vn/dong-bo-lich-outlook-caldav-synchronizer.html",
+      "status": 468,
+      "ok": false,
+      "duration": "1249ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/ten-mien-site.html",
+      "status": 200,
+      "ok": true,
+      "duration": "1370ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/tin-tuc-huong-dan-quy-trinh-dau-gia-ten-mien-vn-dot-2.html",
+      "status": 200,
+      "ok": true,
+      "duration": "1616ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/ten-mien-store.html",
+      "status": 200,
+      "ok": true,
+      "duration": "1879ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/tin-tuc-pa-viet-nam-dong-hanh-cung-vnnic-internet-conference-2026-san-sang-ha-tang-ipv6.html",
+      "status": 200,
+      "ok": true,
+      "duration": "2085ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/ten-mien-one.html",
+      "status": 200,
+      "ok": true,
+      "duration": "2375ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/ten-mien-top.html",
+      "status": 200,
+      "ok": true,
+      "duration": "2678ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/ten-mien-info.html",
+      "status": 200,
+      "ok": true,
+      "duration": "3240ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/ten-mien-org.html",
+      "status": 200,
+      "ok": true,
+      "duration": "3468ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/tin-tuc-pa-viet-nam-dong-hanh-chuyen-doi-so-ho-kinh-doanh-va-cua-hang.html",
+      "status": 200,
+      "ok": true,
+      "duration": "3708ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/tin-tuc-pa-viet-nam-dong-hanh-cung-ho-kinh-doanh-bac-ninh-voi-ten-mien-bizvn-va-web30s.html",
+      "status": 200,
+      "ok": true,
+      "duration": "3952ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/ten-mien-online.html",
+      "status": 200,
+      "ok": true,
+      "duration": "4226ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/tong-dai/tong-dai-dien-thoai-so",
+      "status": 200,
+      "ok": true,
+      "duration": "4835ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/tin-tuc-pa-viet-nam-dong-hanh-cung-ngay-hoi-diem-cham-so.html",
+      "status": 200,
+      "ok": true,
+      "duration": "5037ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/uu-dai-ten-mien-viet-nam.html",
+      "status": 200,
+      "ok": true,
+      "duration": "5282ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/hosting/web-hosting",
+      "status": 200,
+      "ok": true,
+      "duration": "5534ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/tong-dai/tong-dai-chat",
+      "status": 200,
+      "ok": true,
+      "duration": "6370ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/lien-he.html",
+      "status": 200,
+      "ok": true,
+      "duration": "754ms"
     },
     {
       "url": "https://seal.digicert.com/seals/popup/?tag=_U63nKSF&url=www.pavietnam.vn",
       "status": 200,
       "ok": true,
-      "duration": "283ms"
+      "duration": "779ms"
     },
     {
-      "url": "https://support.pavietnam.vn/?redirect=https%3A%2F%2Fwww.pavietnam.vn%2Fvn%2Fhosting%2F",
+      "url": "https://kb.pavietnam.vn/web30s-addon-website-under-construction.html",
+      "status": 468,
+      "ok": false,
+      "duration": "1005ms"
+    },
+    {
+      "url": "https://kb.pavietnam.vn/huong-dan-su-dung-mail-private-domain-admin.html",
+      "status": 468,
+      "ok": false,
+      "duration": "1005ms"
+    },
+    {
+      "url": "https://kb.pavietnam.vn/van-ban-phap-ly.html",
+      "status": 468,
+      "ok": false,
+      "duration": "1227ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/cach-thanh-toan.html",
       "status": 200,
       "ok": true,
-      "duration": "625ms"
+      "duration": "1241ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/tin-cong-nghe/",
+      "status": 200,
+      "ok": true,
+      "duration": "1475ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/bang-gia-doi-tac.html",
+      "status": 200,
+      "ok": true,
+      "duration": "1767ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/doi-qua.html",
+      "status": 200,
+      "ok": true,
+      "duration": "2311ms"
+    },
+    {
+      "url": "https://event.pavietnam.vn/",
+      "status": 200,
+      "ok": true,
+      "duration": "2375ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/bieu-mau-ho-so/",
+      "status": 200,
+      "ok": true,
+      "duration": "2548ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/tuyen-dung.html",
+      "status": 200,
+      "ok": true,
+      "duration": "2832ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/gioi-thieu.html",
+      "status": 200,
+      "ok": true,
+      "duration": "3065ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/bao-cao-lam-dung.html",
+      "status": 200,
+      "ok": true,
+      "duration": "3325ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/danh-muc-san-pham/",
+      "status": 200,
+      "ok": true,
+      "duration": "3613ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/tin-tuc-pa/",
+      "status": 200,
+      "ok": true,
+      "duration": "3809ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/thoa-thuan-su-dung/",
+      "status": 200,
+      "ok": true,
+      "duration": "4097ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/bai-viet-thu-thuat/",
+      "status": 200,
+      "ok": true,
+      "duration": "4581ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/vipcard.html",
+      "status": 200,
+      "ok": true,
+      "duration": "4838ms"
     },
     {
       "url": "https://ipv6-test.com/validate.php?url=pavietnam.vn",
@@ -979,208 +952,226 @@
       "duration": "N/A"
     },
     {
+      "url": "https://support.pavietnam.vn/?redirect=https%3A%2F%2Fwww.pavietnam.vn%2Fvn%2Fhosting%2F",
+      "status": 200,
+      "ok": true,
+      "duration": "536ms"
+    },
+    {
       "url": "https://support.pavietnam.vn/?redirect=https%3A%2F%2Fwww.pavietnam.vn%2Fvn%2Fserver%2F",
       "status": 200,
       "ok": true,
-      "duration": "850ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/hosting/chuyen-muc",
-      "status": 200,
-      "ok": true,
-      "duration": "1358ms"
+      "duration": "735ms"
     },
     {
       "url": "https://www.pavietnam.vn/vn/sao-luu-du-lieu-web",
       "status": 200,
       "ok": true,
-      "duration": "2101ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/uu-dai-tong-hop.html#hosting3",
-      "status": 200,
-      "ok": true,
-      "duration": "2351ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/hosting/wordpress-hosting",
-      "status": 200,
-      "ok": true,
-      "duration": "2980ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/bai-viet-thu-thuat/",
-      "status": 200,
-      "ok": true,
-      "duration": "3552ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/website/toi-uu-website",
-      "status": 200,
-      "ok": true,
-      "duration": "3918ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/en/hosting/",
-      "status": 200,
-      "ok": true,
-      "duration": "5511ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/hosting/unlimited-hosting",
-      "status": 200,
-      "ok": true,
-      "duration": "5977ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/uu-dai-tong-hop.html#hosting1",
-      "status": 200,
-      "ok": true,
-      "duration": "6240ms"
+      "duration": "1260ms"
     },
     {
       "url": "https://www.pavietnam.vn/vn/chuyen-du-lieu-web",
       "status": 200,
       "ok": true,
-      "duration": "6552ms"
+      "duration": "1517ms"
     },
     {
-      "url": "https://www.pavietnam.vn/vn/uu-dai-tong-hop.html#hosting2",
+      "url": "https://www.pavietnam.vn/vn/uu-dai-tong-hop.html#hosting3",
       "status": 200,
       "ok": true,
-      "duration": "6842ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/hosting/sing-hosting",
-      "status": 200,
-      "ok": true,
-      "duration": "7416ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/hosting/reseller-hosting",
-      "status": 200,
-      "ok": true,
-      "duration": "7955ms"
+      "duration": "1779ms"
     },
     {
       "url": "https://www.pavietnam.vn/vn/hosting/web-hosting-python",
       "status": 200,
       "ok": true,
-      "duration": "8499ms"
+      "duration": "2352ms"
     },
     {
-      "url": "https://www.pavietnam.vn/vn/hosting/java-hosting",
+      "url": "https://www.pavietnam.vn/vn/hosting/reseller-hosting",
       "status": 200,
       "ok": true,
-      "duration": "9013ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/hosting/wordpress-vip",
-      "status": 200,
-      "ok": true,
-      "duration": "9558ms"
-    },
-    {
-      "url": "https://support.pavietnam.vn/?redirect=https%3A%2F%2Fwww.pavietnam.vn%2Fvn%2Femail-server%2F",
-      "status": 200,
-      "ok": true,
-      "duration": "545ms"
-    },
-    {
-      "url": "https://support.pavietnam.vn/?redirect=https%3A%2F%2Fwww.pavietnam.vn%2Fvn%2Fwebsite%2F",
-      "status": 200,
-      "ok": true,
-      "duration": "780ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/phan-mem-may-chu.html",
-      "status": 200,
-      "ok": true,
-      "duration": "1379ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/uu-dai-tong-hop.html#cloud2",
-      "status": 200,
-      "ok": true,
-      "duration": "1903ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/uu-dai-tong-hop.html#cloud3",
-      "status": 200,
-      "ok": true,
-      "duration": "2179ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/uu-dai-tong-hop.html?utm_source=pop-up-pa&utm_medium=trang-con-web30s&utm_campaign=web30s-combo-uu-dai-40-trieu-pop-up-pa-trang-con-web30s&utm_term=web30s-tang-100-thoi-gian#sec-web",
-      "status": 200,
-      "ok": true,
-      "duration": "2407ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/uu-dai-tong-hop.html#sec-web-web2",
-      "status": 200,
-      "ok": true,
-      "duration": "2653ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/en/email-server/",
-      "status": 200,
-      "ok": true,
-      "duration": "4323ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/server/cloud-server-super",
-      "status": 200,
-      "ok": true,
-      "duration": "5314ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/uu-dai-tong-hop.html#sec-web-web3",
-      "status": 200,
-      "ok": true,
-      "duration": "5543ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/uu-dai-tong-hop.html#sec-web-web1",
-      "status": 200,
-      "ok": true,
-      "duration": "5797ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/en/website/",
-      "status": 200,
-      "ok": true,
-      "duration": "6272ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/server/cloud-server-pro",
-      "status": 200,
-      "ok": true,
-      "duration": "6536ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/dang-ky-unix.html?item=40840",
-      "status": 200,
-      "ok": true,
-      "duration": "7563ms"
+      "duration": "2890ms"
     },
     {
       "url": "https://www.pavietnam.vn/vn/uu-dai-tong-hop.html#cloud1",
       "status": 200,
       "ok": true,
-      "duration": "7809ms"
+      "duration": "3302ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/hosting/unlimited-hosting",
+      "status": 200,
+      "ok": true,
+      "duration": "3749ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/hosting/sing-hosting",
+      "status": 200,
+      "ok": true,
+      "duration": "3952ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/hosting/chuyen-muc",
+      "status": 200,
+      "ok": true,
+      "duration": "4413ms"
     },
     {
       "url": "https://www.pavietnam.vn/en/server/",
+      "status": 200,
+      "ok": true,
+      "duration": "6986ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/en/hosting/",
+      "status": 200,
+      "ok": true,
+      "duration": "8464ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/hosting/wordpress-hosting",
+      "status": 200,
+      "ok": true,
+      "duration": "9044ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/hosting/java-hosting",
+      "status": 200,
+      "ok": true,
+      "duration": "9254ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/website/toi-uu-website",
       "status": "TIMEOUT/ERROR",
       "ok": false,
       "duration": "N/A"
     },
     {
-      "url": "https://www.pavietnam.vn/",
+      "url": "https://www.pavietnam.vn/vn/uu-dai-tong-hop.html#hosting1",
       "status": "TIMEOUT/ERROR",
       "ok": false,
       "duration": "N/A"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/uu-dai-tong-hop.html#hosting2",
+      "status": "TIMEOUT/ERROR",
+      "ok": false,
+      "duration": "N/A"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/hosting/wordpress-vip",
+      "status": "TIMEOUT/ERROR",
+      "ok": false,
+      "duration": "N/A"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/phan-mem-may-chu.html",
+      "status": "TIMEOUT/ERROR",
+      "ok": false,
+      "duration": "N/A"
+    },
+    {
+      "url": "https://support.pavietnam.vn/?redirect=https%3A%2F%2Fwww.pavietnam.vn%2Fvn%2Fwebsite%2F",
+      "status": 200,
+      "ok": true,
+      "duration": "523ms"
+    },
+    {
+      "url": "https://support.pavietnam.vn/?redirect=https%3A%2F%2Fwww.pavietnam.vn%2Fvn%2Femail-server%2F",
+      "status": 200,
+      "ok": true,
+      "duration": "744ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/uu-dai-tong-hop.html#cloud2",
+      "status": 200,
+      "ok": true,
+      "duration": "1304ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/uu-dai-tong-hop.html#sec-web-web1",
+      "status": 200,
+      "ok": true,
+      "duration": "1551ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/uu-dai-tong-hop.html#cloud3",
+      "status": 200,
+      "ok": true,
+      "duration": "2371ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/uu-dai-tong-hop.html#email1",
+      "status": 200,
+      "ok": true,
+      "duration": "2605ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/server/cloud-server-pro",
+      "status": 200,
+      "ok": true,
+      "duration": "2862ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/en/email-server/",
+      "status": 200,
+      "ok": true,
+      "duration": "4593ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/uu-dai-tong-hop.html#email2",
+      "status": 200,
+      "ok": true,
+      "duration": "4827ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/uu-dai-tong-hop.html#email3",
+      "status": 200,
+      "ok": true,
+      "duration": "5109ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/uu-dai-tong-hop.html#sec-web-web2",
+      "status": 200,
+      "ok": true,
+      "duration": "5359ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/uu-dai-tong-hop.html?utm_source=pop-up-pa&utm_medium=trang-con-web30s&utm_campaign=web30s-combo-uu-dai-40-trieu-pop-up-pa-trang-con-web30s&utm_term=web30s-tang-100-thoi-gian#sec-web",
+      "status": 200,
+      "ok": true,
+      "duration": "5879ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/server/cloud-server-super",
+      "status": 200,
+      "ok": true,
+      "duration": "6802ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/en/website/",
+      "status": 200,
+      "ok": true,
+      "duration": "7237ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/dang-ky-unix.html?item=40840",
+      "status": 200,
+      "ok": true,
+      "duration": "7879ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/",
+      "status": 200,
+      "ok": true,
+      "duration": "8834ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/uu-dai-tong-hop.html#sec-web-web3",
+      "status": 200,
+      "ok": true,
+      "duration": "9140ms"
     },
     {
       "url": "https://www.pavietnam.vn/vn/dang-ky-unix.html?item=40834",
@@ -1201,274 +1192,256 @@
       "duration": "N/A"
     },
     {
-      "url": "https://support.pavietnam.vn/?redirect=https%3A%2F%2Fwww.pavietnam.vn%2Fvn%2Ftong-dai%2F",
-      "status": 200,
-      "ok": true,
-      "duration": "518ms"
-    },
-    {
       "url": "https://support.pavietnam.vn/?redirect=https%3A%2F%2Fwww.pavietnam.vn%2Fvn%2Fchung-chi-ssl-tls%2F",
       "status": 200,
       "ok": true,
-      "duration": "840ms"
+      "duration": "561ms"
+    },
+    {
+      "url": "https://support.pavietnam.vn/?redirect=https%3A%2F%2Fwww.pavietnam.vn%2Fvn%2Ftong-dai%2F",
+      "status": 200,
+      "ok": true,
+      "duration": "835ms"
     },
     {
       "url": "https://www-ote.pavietnam.vn/vn/hosting/unlimited-hosting",
       "status": 200,
       "ok": true,
-      "duration": "1365ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/email-server/private-email",
-      "status": 200,
-      "ok": true,
-      "duration": "1859ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/uu-dai-tong-hop.html#ssl1",
-      "status": 200,
-      "ok": true,
-      "duration": "2164ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/chung-chi-ssl-tls/digicert",
-      "status": 200,
-      "ok": true,
-      "duration": "2394ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/email-server/email-server-rieng-cheap",
-      "status": 200,
-      "ok": true,
-      "duration": "3042ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/chung-chi-ssl-tls/thawte",
-      "status": 200,
-      "ok": true,
-      "duration": "3231ms"
+      "duration": "1256ms"
     },
     {
       "url": "https://www.pavietnam.vn/en/chung-chi-ssl-tls/",
       "status": 200,
       "ok": true,
-      "duration": "3526ms"
+      "duration": "1452ms"
     },
     {
-      "url": "https://www.pavietnam.vn/vn/uu-dai-tong-hop.html#email1",
+      "url": "https://www.pavietnam.vn/vn/email-server/email-server-rieng-cheap",
       "status": 200,
       "ok": true,
-      "duration": "4737ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/uu-dai-tong-hop.html#email3",
-      "status": 200,
-      "ok": true,
-      "duration": "4999ms"
+      "duration": "2588ms"
     },
     {
       "url": "https://www.pavietnam.vn/vn/uu-dai-tong-hop.html#sec-tongdai-tongdai2",
       "status": 200,
       "ok": true,
-      "duration": "5292ms"
+      "duration": "3947ms"
     },
     {
-      "url": "https://www.pavietnam.vn/vn/uu-dai-tong-hop.html#sec-tongdai-tongdai1",
+      "url": "https://www.pavietnam.vn/vn/email-server/private-email",
       "status": 200,
       "ok": true,
-      "duration": "5535ms"
+      "duration": "4196ms"
     },
     {
-      "url": "https://www.pavietnam.vn/en/tong-dai/",
+      "url": "https://www.pavietnam.vn/vn/uu-dai-tong-hop.html#ssl1",
       "status": 200,
       "ok": true,
-      "duration": "6789ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/dang-ky-unix-38742.html",
-      "status": 200,
-      "ok": true,
-      "duration": "6840ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/dang-ky-unix-38751.html",
-      "status": 200,
-      "ok": true,
-      "duration": "7118ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/uu-dai-tong-hop.html#email2",
-      "status": 200,
-      "ok": true,
-      "duration": "7884ms"
+      "duration": "4417ms"
     },
     {
       "url": "https://www.pavietnam.vn/vn/dang-ky-unix-38724.html",
       "status": 200,
       "ok": true,
-      "duration": "8071ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/dang-ky-unix-38715.html",
-      "status": 200,
-      "ok": true,
-      "duration": "8549ms"
+      "duration": "4729ms"
     },
     {
       "url": "https://www.pavietnam.vn/vn/tu-van-ssl.html",
       "status": 200,
       "ok": true,
-      "duration": "9845ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/tong-dai/vn/dang-ky-unix-38742.html",
-      "status": 404,
-      "ok": false,
-      "duration": "263ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/tong-dai/vn/dang-ky-unix-38715.html",
-      "status": 404,
-      "ok": false,
-      "duration": "266ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/tong-dai/vn/dang-ky-unix-38760.html",
-      "status": 404,
-      "ok": false,
-      "duration": "268ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/tong-dai/vn/dang-ky-unix-38751.html",
-      "status": 404,
-      "ok": false,
-      "duration": "273ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/tong-dai/vn/dang-ky-unix-38724.html",
-      "status": 404,
-      "ok": false,
-      "duration": "280ms"
-    },
-    {
-      "url": "https://support.pavietnam.vn/?redirect=https%3A%2F%2Fwww.pavietnam.vn%2Fvn%2Fe-hoa-don%2F",
-      "status": 200,
-      "ok": true,
-      "duration": "555ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/tong-dai/vn/dang-ky-unix-41457.html",
-      "status": 404,
-      "ok": false,
-      "duration": "1060ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/tong-dai/vn/dang-ky-unix-41464.html",
-      "status": 404,
-      "ok": false,
-      "duration": "1085ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/tong-dai/vn/dang-ky-unix-41487.html",
-      "status": 404,
-      "ok": false,
-      "duration": "1090ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/tong-dai/vn/dang-ky-unix-38769.html",
-      "status": 404,
-      "ok": false,
-      "duration": "1102ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/tong-dai/vn/dang-ky-unix-41471.html",
-      "status": 404,
-      "ok": false,
-      "duration": "1106ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/dang-ky-unix-41487.html",
-      "status": 200,
-      "ok": true,
-      "duration": "1692ms"
+      "duration": "5627ms"
     },
     {
       "url": "https://www.pavietnam.vn/vn/dang-ky-unix-38769.html",
       "status": 200,
       "ok": true,
-      "duration": "1934ms"
+      "duration": "5869ms"
     },
     {
-      "url": "https://www.pavietnam.vn/vn/dang-ky-unix-41457.html",
+      "url": "https://www.pavietnam.vn/vn/dang-ky-unix-38751.html",
       "status": 200,
       "ok": true,
-      "duration": "2144ms"
+      "duration": "6294ms"
     },
     {
-      "url": "https://www.pavietnam.vn/en/e-hoa-don/",
+      "url": "https://www.pavietnam.vn/vn/dang-ky-unix-38715.html",
       "status": 200,
       "ok": true,
-      "duration": "2759ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/e-hoa-don/hoa-don-dau-vao",
-      "status": 200,
-      "ok": true,
-      "duration": "3185ms"
-    },
-    {
-      "url": "https://www.pavietnam.vn/vn/dang-ky-unix-38760.html",
-      "status": 200,
-      "ok": true,
-      "duration": "3446ms"
+      "duration": "6500ms"
     },
     {
       "url": "https://www.pavietnam.vn/vn/dang-ky-unix-41471.html",
       "status": 200,
       "ok": true,
-      "duration": "3648ms"
+      "duration": "6751ms"
     },
     {
-      "url": "https://www.pavietnam.vn/vn/dang-ky-unix-41464.html",
+      "url": "https://www.pavietnam.vn/en/tong-dai/",
       "status": 200,
       "ok": true,
-      "duration": "3878ms"
+      "duration": "7124ms"
     },
     {
-      "url": "https://www.pavietnam.vn/vn/uu-dai-tong-hop.html#hoadon1",
+      "url": "https://www.pavietnam.vn/vn/dang-ky-unix-38742.html",
       "status": 200,
       "ok": true,
-      "duration": "4093ms"
+      "duration": "7425ms"
     },
     {
-      "url": "https://www.pavietnam.vn/vn/uu-dai-tong-hop.html#sec-hoadon-hoadon2",
+      "url": "https://www.pavietnam.vn/chung-chi-ssl-tls/digicert",
       "status": 200,
       "ok": true,
-      "duration": "1018ms"
+      "duration": "7683ms"
     },
     {
-      "url": "https://www.pavietnam.vn/vn/uu-dai-tong-hop.html#sec-hoadon-hoadon1",
+      "url": "https://www.pavietnam.vn/chung-chi-ssl-tls/thawte",
       "status": 200,
       "ok": true,
-      "duration": "1266ms"
+      "duration": "7898ms"
     },
     {
-      "url": "https://www.pavietnam.vn/vn/uu-dai-tong-hop.html#sec-hoadon-hoadon3",
+      "url": "https://www.pavietnam.vn/vn/dang-ky-unix-38760.html",
       "status": 200,
       "ok": true,
-      "duration": "1483ms"
+      "duration": "8160ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/uu-dai-tong-hop.html#sec-tongdai-tongdai1",
+      "status": 200,
+      "ok": true,
+      "duration": "8380ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/tong-dai/vn/dang-ky-unix-38715.html",
+      "status": 404,
+      "ok": false,
+      "duration": "257ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/tong-dai/vn/dang-ky-unix-38724.html",
+      "status": 404,
+      "ok": false,
+      "duration": "256ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/tong-dai/vn/dang-ky-unix-38760.html",
+      "status": 404,
+      "ok": false,
+      "duration": "255ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/tong-dai/vn/dang-ky-unix-41487.html",
+      "status": 404,
+      "ok": false,
+      "duration": "254ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/tong-dai/vn/dang-ky-unix-41471.html",
+      "status": 404,
+      "ok": false,
+      "duration": "255ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/tong-dai/vn/dang-ky-unix-41457.html",
+      "status": 404,
+      "ok": false,
+      "duration": "254ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/tong-dai/vn/dang-ky-unix-38751.html",
+      "status": 404,
+      "ok": false,
+      "duration": "262ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/tong-dai/vn/dang-ky-unix-41464.html",
+      "status": 404,
+      "ok": false,
+      "duration": "260ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/tong-dai/vn/dang-ky-unix-38769.html",
+      "status": 404,
+      "ok": false,
+      "duration": "262ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/tong-dai/vn/dang-ky-unix-38742.html",
+      "status": 404,
+      "ok": false,
+      "duration": "265ms"
+    },
+    {
+      "url": "https://support.pavietnam.vn/?redirect=https%3A%2F%2Fwww.pavietnam.vn%2Fvn%2Fe-hoa-don%2F",
+      "status": 200,
+      "ok": true,
+      "duration": "481ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/en/e-hoa-don/",
+      "status": 200,
+      "ok": true,
+      "duration": "1256ms"
     },
     {
       "url": "https://www.pavietnam.vn/vn/uu-dai-tong-hop.html#hoadon2",
       "status": 200,
       "ok": true,
-      "duration": "1696ms"
+      "duration": "1963ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/uu-dai-tong-hop.html#hoadon1",
+      "status": 200,
+      "ok": true,
+      "duration": "2196ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/e-hoa-don/hoa-don-dau-vao",
+      "status": 200,
+      "ok": true,
+      "duration": "2637ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/dang-ky-unix-41457.html",
+      "status": 200,
+      "ok": true,
+      "duration": "2938ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/dang-ky-unix-41487.html",
+      "status": 200,
+      "ok": true,
+      "duration": "3178ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/uu-dai-tong-hop.html#sec-hoadon-hoadon1",
+      "status": 200,
+      "ok": true,
+      "duration": "3436ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/dang-ky-unix-41464.html",
+      "status": 200,
+      "ok": true,
+      "duration": "3716ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/uu-dai-tong-hop.html#sec-hoadon-hoadon2",
+      "status": 200,
+      "ok": true,
+      "duration": "3943ms"
     },
     {
       "url": "https://www.pavietnam.vn/vn/uu-dai-tong-hop.html#sec-hoadon-hoadon4",
       "status": 200,
       "ok": true,
-      "duration": "1942ms"
+      "duration": "751ms"
+    },
+    {
+      "url": "https://www.pavietnam.vn/vn/uu-dai-tong-hop.html#sec-hoadon-hoadon3",
+      "status": 200,
+      "ok": true,
+      "duration": "988ms"
     }
   ]
 }
