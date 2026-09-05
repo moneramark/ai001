@@ -1,0 +1,1508 @@
+
+  <!DOCTYPE html>
+  <html lang="vi">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAVietnam AI Smart Monitor Dashboard</title>
+    <style>
+      body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f1f5f9; margin: 0; padding: 24px; color: #0f172a; }
+      .container { max-width: 1100px; margin: 0 auto; background: white; padding: 28px; border-radius: 16px; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05); }
+      .header { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #e2e8f0; padding-bottom: 16px; margin-bottom: 24px; }
+      .metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 32px; }
+      .card { padding: 20px; border-radius: 12px; text-align: center; }
+      .card.total { background: #eff6ff; color: #1d4ed8; }
+      .card.passed { background: #f0fdf4; color: #15803d; }
+      .card.failed { background: #fef2f2; color: #b91c1c; }
+      .card.ssl { background: #fffbeb; color: #b45309; }
+      .section-title { font-size: 18px; font-weight: bold; margin-top: 28px; margin-bottom: 16px; color: #334155; }
+      .grid-visual { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; }
+      .visual-card { border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden; background: #fff; }
+      .visual-card img { width: 100%; height: 180px; object-fit: cover; border-bottom: 1px solid #e2e8f0; }
+      .visual-info { padding: 16px; }
+      .badge { padding: 4px 8px; border-radius: 4px; font-size: 11px; font-weight: bold; display: inline-block; }
+      .badge-success { background: #dcfce7; color: #166534; }
+      .badge-danger { background: #fee2e2; color: #991b1b; }
+      table { width: 100%; border-collapse: collapse; margin-top: 12px; font-size: 13px; }
+      th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #e2e8f0; }
+      th { background: #f8fafc; }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div>
+          <h2 style="margin:0;">🤖 PAVietnam AI Smart Monitor</h2>
+          <small style="color:#64748b;">Giám sát tự động với AI Smart Audit & Visual Inspection</small>
+        </div>
+        <div>
+          <span class="badge badge-success" style="font-size:13px;">SSL: 162 ngày</span>
+        </div>
+      </div>
+
+      <div class="metrics">
+        <div class="card total"><span style="font-size:12px;">TỔNG LINK QUÉT</span><br><b style="font-size:28px;">222</b></div>
+        <div class="card passed"><span style="font-size:12px;">LINK SỐNG</span><br><b style="font-size:28px;">193</b></div>
+        <div class="card failed"><span style="font-size:12px;">LINK LỖI</span><br><b style="font-size:28px;">29</b></div>
+        <div class="card ssl"><span style="font-size:12px;">TRANG CHÍNH</span><br><b style="font-size:28px;">8</b></div>
+      </div>
+
+      <div class="section-title">📷 Visual & Smart Health Audit</div>
+      <div class="grid-visual">
+        
+          <div class="visual-card">
+            <img src="trang_ch_.png" alt="Trang chủ"/>
+            <div class="visual-info">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+                <b>Trang chủ</b>
+                <span class="badge badge-success">HTTP 200</span>
+              </div>
+              <div style="font-size:12px;color:#64748b;margin-bottom:8px;">Tốc độ: <b>3723ms</b> | Console Errors: <b>0</b></div>
+              
+              
+              
+            </div>
+          </div>
+        
+          <div class="visual-card">
+            <img src="hosting.png" alt="Hosting"/>
+            <div class="visual-info">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+                <b>Hosting</b>
+                <span class="badge badge-success">HTTP 200</span>
+              </div>
+              <div style="font-size:12px;color:#64748b;margin-bottom:8px;">Tốc độ: <b>4017ms</b> | Console Errors: <b>0</b></div>
+              
+              
+              
+            </div>
+          </div>
+        
+          <div class="visual-card">
+            <img src="server.png" alt="Server"/>
+            <div class="visual-info">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+                <b>Server</b>
+                <span class="badge badge-success">HTTP 200</span>
+              </div>
+              <div style="font-size:12px;color:#64748b;margin-bottom:8px;">Tốc độ: <b>4654ms</b> | Console Errors: <b>0</b></div>
+              
+              
+              
+            </div>
+          </div>
+        
+          <div class="visual-card">
+            <img src="website.png" alt="Website"/>
+            <div class="visual-info">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+                <b>Website</b>
+                <span class="badge badge-success">HTTP 200</span>
+              </div>
+              <div style="font-size:12px;color:#64748b;margin-bottom:8px;">Tốc độ: <b>2989ms</b> | Console Errors: <b>0</b></div>
+              
+              
+              
+            </div>
+          </div>
+        
+          <div class="visual-card">
+            <img src="email_server.png" alt="Email server"/>
+            <div class="visual-info">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+                <b>Email server</b>
+                <span class="badge badge-success">HTTP 200</span>
+              </div>
+              <div style="font-size:12px;color:#64748b;margin-bottom:8px;">Tốc độ: <b>4093ms</b> | Console Errors: <b>0</b></div>
+              
+              
+              
+            </div>
+          </div>
+        
+          <div class="visual-card">
+            <img src="ch_ng_ch__ssl_tls.png" alt="Chứng chỉ SSL tls"/>
+            <div class="visual-info">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+                <b>Chứng chỉ SSL tls</b>
+                <span class="badge badge-success">HTTP 200</span>
+              </div>
+              <div style="font-size:12px;color:#64748b;margin-bottom:8px;">Tốc độ: <b>3415ms</b> | Console Errors: <b>0</b></div>
+              
+              
+              
+            </div>
+          </div>
+        
+          <div class="visual-card">
+            <img src="t_ng___i.png" alt="Tổng đài"/>
+            <div class="visual-info">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+                <b>Tổng đài</b>
+                <span class="badge badge-success">HTTP 200</span>
+              </div>
+              <div style="font-size:12px;color:#64748b;margin-bottom:8px;">Tốc độ: <b>2814ms</b> | Console Errors: <b>0</b></div>
+              
+              
+              
+            </div>
+          </div>
+        
+          <div class="visual-card">
+            <img src="e_h_a___n.png" alt="E Hóa đơn"/>
+            <div class="visual-info">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+                <b>E Hóa đơn</b>
+                <span class="badge badge-success">HTTP 200</span>
+              </div>
+              <div style="font-size:12px;color:#64748b;margin-bottom:8px;">Tốc độ: <b>3497ms</b> | Console Errors: <b>0</b></div>
+              
+              
+              
+            </div>
+          </div>
+        
+      </div>
+
+      <div class="section-title">🔗 Danh Sách Chi Tiết Links Nội Bộ</div>
+      <table>
+        <thead><tr><th>URL Nội Bộ</th><th>Trạng Thái</th><th>Thời Gian</th></tr></thead>
+        <tbody>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://support.pavietnam.vn/?redirect=https%3A%2F%2Fwww.pavietnam.vn%2Fvn%2F" target="_blank">https://support.pavietnam.vn/?redirect=https%3A%2F%2Fwww.pavietnam.vn%2Fvn%2F</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>1347ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/ten-mien/chuyen-ten-mien-ve-pa" target="_blank">https://www.pavietnam.vn/vn/ten-mien/chuyen-ten-mien-ve-pa</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>1664ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/ten-mien-mien-phi.html" target="_blank">https://www.pavietnam.vn/vn/ten-mien-mien-phi.html</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>1681ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/ten-mien/chuyen-nhuong-ten-mien" target="_blank">https://www.pavietnam.vn/vn/ten-mien/chuyen-nhuong-ten-mien</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>1680ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/ten-mien-thuong-hieu.html" target="_blank">https://www.pavietnam.vn/vn/ten-mien-thuong-hieu.html</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>1694ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/ten-mien/tien-ich-dns" target="_blank">https://www.pavietnam.vn/vn/ten-mien/tien-ich-dns</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>1720ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/uu-dai-tong-hop.html" target="_blank">https://www.pavietnam.vn/vn/uu-dai-tong-hop.html</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>1782ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/ten-mien-tu-do.html" target="_blank">https://www.pavietnam.vn/vn/ten-mien-tu-do.html</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>1815ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/ten-mien/tim-kiem-ten-mien" target="_blank">https://www.pavietnam.vn/vn/ten-mien/tim-kiem-ten-mien</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>1832ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://support.pavietnam.vn/" target="_blank">https://support.pavietnam.vn/</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>1847ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/ten-mien/bao-mat-ten-mien" target="_blank">https://www.pavietnam.vn/vn/ten-mien/bao-mat-ten-mien</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>1841ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/checkout.html" target="_blank">https://www.pavietnam.vn/vn/checkout.html</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>2520ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/bao-mat-thong-tin-ten-mien-id-protect.html" target="_blank">https://www.pavietnam.vn/vn/bao-mat-thong-tin-ten-mien-id-protect.html</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>2598ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/" target="_blank">https://www.pavietnam.vn/vn/</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>2887ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/en/" target="_blank">https://www.pavietnam.vn/en/</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>3277ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/signout.html" target="_blank">https://www.pavietnam.vn/vn/signout.html</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>3676ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/ten-mien/" target="_blank">https://www.pavietnam.vn/vn/ten-mien/</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>4040ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/dang-ky-ten-mien.html" target="_blank">https://www.pavietnam.vn/vn/dang-ky-ten-mien.html</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>5555ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/ten-mien-bang-gia.html?utm_source=pop-up-pa&utm_medium=banner-home-page&utm_campaign=ten-mien-bang-gia-pop-up-pa&utm_term=ten-mien-bang-gia" target="_blank">https://www.pavietnam.vn/vn/ten-mien-bang-gia.html?utm_source=pop-up-pa&utm_medium=banner-home-page&utm_campaign=ten-mien-bang-gia-pop-up-pa&utm_term=ten-mien-bang-gia</a></td>
+              <td><span class="badge badge-danger">TIMEOUT/ERROR</span></td>
+              <td>N/A</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/ten-mien-bang-gia.html" target="_blank">https://www.pavietnam.vn/vn/ten-mien-bang-gia.html</a></td>
+              <td><span class="badge badge-danger">TIMEOUT/ERROR</span></td>
+              <td>N/A</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/hosting/" target="_blank">https://www.pavietnam.vn/vn/hosting/</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>924ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/hosting/enterprise-hosting" target="_blank">https://www.pavietnam.vn/vn/hosting/enterprise-hosting</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>1172ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/website/cham-soc-website" target="_blank">https://www.pavietnam.vn/vn/website/cham-soc-website</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>1455ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/server/" target="_blank">https://www.pavietnam.vn/vn/server/</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>1691ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/server/co-location" target="_blank">https://www.pavietnam.vn/vn/server/co-location</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>2291ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/server/nodejs" target="_blank">https://www.pavietnam.vn/vn/server/nodejs</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>2673ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/hosting/vibe-coding-hosting" target="_blank">https://www.pavietnam.vn/vn/hosting/vibe-coding-hosting</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>3046ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/hosting/wordpress" target="_blank">https://www.pavietnam.vn/vn/hosting/wordpress</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>3501ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/server/cloud-server" target="_blank">https://www.pavietnam.vn/vn/server/cloud-server</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>4389ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/sao-luu-du-lieu-may-chu" target="_blank">https://www.pavietnam.vn/vn/sao-luu-du-lieu-may-chu</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>4812ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/website/xay-dung-website" target="_blank">https://www.pavietnam.vn/vn/website/xay-dung-website</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>5303ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/server/dedicated-server" target="_blank">https://www.pavietnam.vn/vn/server/dedicated-server</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>7298ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/hosting/web-hosting-nodejs" target="_blank">https://www.pavietnam.vn/vn/hosting/web-hosting-nodejs</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>7979ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/server/python" target="_blank">https://www.pavietnam.vn/vn/server/python</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>8281ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/hosting/business-hosting" target="_blank">https://www.pavietnam.vn/vn/hosting/business-hosting</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>8798ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/cdn30s" target="_blank">https://www.pavietnam.vn/vn/cdn30s</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>9065ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/website/" target="_blank">https://www.pavietnam.vn/vn/website/</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>9303ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/server/virtual-private-cloud" target="_blank">https://www.pavietnam.vn/vn/server/virtual-private-cloud</a></td>
+              <td><span class="badge badge-danger">TIMEOUT/ERROR</span></td>
+              <td>N/A</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/dich-vu-dang-ky-website-voi-bo-cong-thuong" target="_blank">https://www.pavietnam.vn/vn/dich-vu-dang-ky-website-voi-bo-cong-thuong</a></td>
+              <td><span class="badge badge-danger">TIMEOUT/ERROR</span></td>
+              <td>N/A</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/website/ai-content-pro" target="_blank">https://www.pavietnam.vn/vn/website/ai-content-pro</a></td>
+              <td><span class="badge badge-danger">TIMEOUT/ERROR</span></td>
+              <td>N/A</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/server/cloud-drive30s" target="_blank">https://www.pavietnam.vn/vn/server/cloud-drive30s</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>1078ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/email-server/microsoft-365" target="_blank">https://www.pavietnam.vn/vn/email-server/microsoft-365</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>1463ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/server/quan-tri-may-chu" target="_blank">https://www.pavietnam.vn/vn/server/quan-tri-may-chu</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>1793ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/chu-ky-email" target="_blank">https://www.pavietnam.vn/vn/chu-ky-email</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>2046ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/email-server/" target="_blank">https://www.pavietnam.vn/vn/email-server/</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>2283ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/sao-luu-du-lieu-email" target="_blank">https://www.pavietnam.vn/vn/sao-luu-du-lieu-email</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>2671ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/giai-phap-can-bang-tai" target="_blank">https://www.pavietnam.vn/vn/giai-phap-can-bang-tai</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>2917ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/email-server/google-workspace" target="_blank">https://www.pavietnam.vn/vn/email-server/google-workspace</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>3277ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/bo-tiep-thi-ky-thuat-so" target="_blank">https://www.pavietnam.vn/vn/bo-tiep-thi-ky-thuat-so</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>3547ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/chu-ky-so-email" target="_blank">https://www.pavietnam.vn/vn/chu-ky-so-email</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>3809ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/email-marketing" target="_blank">https://www.pavietnam.vn/vn/email-marketing</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>4157ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/email-server/may-chu-email-cho-doanh-nghiep" target="_blank">https://www.pavietnam.vn/vn/email-server/may-chu-email-cho-doanh-nghiep</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>4837ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/elasticcached" target="_blank">https://www.pavietnam.vn/vn/elasticcached</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>5118ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/biz30s" target="_blank">https://www.pavietnam.vn/vn/biz30s</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>5192ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/hybrid-email" target="_blank">https://www.pavietnam.vn/vn/hybrid-email</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>5745ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/email-antispam-protection" target="_blank">https://www.pavietnam.vn/vn/email-antispam-protection</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>6010ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/google-adwords" target="_blank">https://www.pavietnam.vn/vn/google-adwords</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>6276ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/facebook-ads" target="_blank">https://www.pavietnam.vn/vn/facebook-ads</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>6563ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/email-server/giai-phap-email" target="_blank">https://www.pavietnam.vn/vn/email-server/giai-phap-email</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>6831ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/quan-tri-email" target="_blank">https://www.pavietnam.vn/vn/quan-tri-email</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>7158ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/website/thiet-ke-banner" target="_blank">https://www.pavietnam.vn/vn/website/thiet-ke-banner</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>680ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/chung-chi-ssl-tls/sectigo" target="_blank">https://www.pavietnam.vn/vn/chung-chi-ssl-tls/sectigo</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>1389ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/e-hoa-don/truyen-nhan-luu-tru-hoa-don" target="_blank">https://www.pavietnam.vn/vn/e-hoa-don/truyen-nhan-luu-tru-hoa-don</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>1949ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/tong-dai/tong-dai-ao" target="_blank">https://www.pavietnam.vn/vn/tong-dai/tong-dai-ao</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>2292ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/chung-chi-ssl-tls/thawte" target="_blank">https://www.pavietnam.vn/vn/chung-chi-ssl-tls/thawte</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>2782ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/chung-chi-ssl-tls/" target="_blank">https://www.pavietnam.vn/vn/chung-chi-ssl-tls/</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>3026ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/sms-brandname" target="_blank">https://www.pavietnam.vn/vn/sms-brandname</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>3367ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/webguard.html" target="_blank">https://www.pavietnam.vn/vn/webguard.html</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>3610ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/chung-chi-ssl-tls/rapid-geotrust" target="_blank">https://www.pavietnam.vn/vn/chung-chi-ssl-tls/rapid-geotrust</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>4136ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/e-hoa-don/" target="_blank">https://www.pavietnam.vn/vn/e-hoa-don/</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>4575ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/tong-dai/" target="_blank">https://www.pavietnam.vn/vn/tong-dai/</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>4800ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/e-hoa-don/chu-ky-so" target="_blank">https://www.pavietnam.vn/vn/e-hoa-don/chu-ky-so</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>5107ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/chung-chi-ssl-tls/digicert" target="_blank">https://www.pavietnam.vn/vn/chung-chi-ssl-tls/digicert</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>5395ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/cloudbric-waf.html" target="_blank">https://www.pavietnam.vn/vn/cloudbric-waf.html</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>5650ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/website/thiet-ke-logo" target="_blank">https://www.pavietnam.vn/vn/website/thiet-ke-logo</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>5918ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/e-hoa-don/phan-mem-hoa-don-dien-tu" target="_blank">https://www.pavietnam.vn/vn/e-hoa-don/phan-mem-hoa-don-dien-tu</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>8247ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/chung-chi-ssl-tls/sectigo-comodo" target="_blank">https://www.pavietnam.vn/vn/chung-chi-ssl-tls/sectigo-comodo</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>8824ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/chung-chi-ssl-tls/ssl-automation" target="_blank">https://www.pavietnam.vn/vn/chung-chi-ssl-tls/ssl-automation</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>9062ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/bao-mat-website" target="_blank">https://www.pavietnam.vn/vn/bao-mat-website</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>9378ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/direct-admin.html" target="_blank">https://www.pavietnam.vn/vn/direct-admin.html</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>9658ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/cpanel.html" target="_blank">https://www.pavietnam.vn/vn/cpanel.html</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>941ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://support.pavietnam.vn/index.php?pa=service&flag=1&flag_id=0&type=" target="_blank">https://support.pavietnam.vn/index.php?pa=service&flag=1&flag_id=0&type=</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>1424ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/hosting-controller.html" target="_blank">https://www.pavietnam.vn/vn/hosting-controller.html</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>1431ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/imunify360-security-soft.html" target="_blank">https://www.pavietnam.vn/vn/imunify360-security-soft.html</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>1743ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://support.pavietnam.vn/index.php?pa=myorder" target="_blank">https://support.pavietnam.vn/index.php?pa=myorder</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>1904ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://support.pavietnam.vn/index.php?pa=profile" target="_blank">https://support.pavietnam.vn/index.php?pa=profile</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>1989ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/uu-dai-tong-hop.html#sec-hoadon" target="_blank">https://www.pavietnam.vn/vn/uu-dai-tong-hop.html#sec-hoadon</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>2121ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/uu-dai-tong-hop.html#sec-web" target="_blank">https://www.pavietnam.vn/vn/uu-dai-tong-hop.html#sec-web</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>2404ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/tong-dai/tong-dai-dien-thoai-so#packages" target="_blank">https://www.pavietnam.vn/vn/tong-dai/tong-dai-dien-thoai-so#packages</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>2768ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/uu-dai-tong-hop.html#sec-tongdai" target="_blank">https://www.pavietnam.vn/vn/uu-dai-tong-hop.html#sec-tongdai</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>3037ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://support.pavietnam.vn/index.php?pa=binding_payment" target="_blank">https://support.pavietnam.vn/index.php?pa=binding_payment</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>3428ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/lite-speed.html" target="_blank">https://www.pavietnam.vn/vn/lite-speed.html</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>3510ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/uu-dai-tong-hop.html#sec-hosting" target="_blank">https://www.pavietnam.vn/vn/uu-dai-tong-hop.html#sec-hosting</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>3789ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/ten-mien-xyz.html" target="_blank">https://www.pavietnam.vn/vn/ten-mien-xyz.html</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>4072ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/ten-mien-click.html" target="_blank">https://www.pavietnam.vn/vn/ten-mien-click.html</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>4311ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/kernelcare.html" target="_blank">https://www.pavietnam.vn/vn/kernelcare.html</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>4554ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/cloud-linux.html" target="_blank">https://www.pavietnam.vn/vn/cloud-linux.html</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>4956ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/ten-mien-asia.html" target="_blank">https://www.pavietnam.vn/vn/ten-mien-asia.html</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>5199ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/360-monitoring.html" target="_blank">https://www.pavietnam.vn/vn/360-monitoring.html</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>5566ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/whmcs.html" target="_blank">https://www.pavietnam.vn/vn/whmcs.html</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>5885ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/ten-mien-info.html" target="_blank">https://www.pavietnam.vn/vn/ten-mien-info.html</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>887ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/tin-tuc-pa-viet-nam-dong-hanh-chuyen-doi-so-ho-kinh-doanh-va-cua-hang.html" target="_blank">https://www.pavietnam.vn/vn/tin-tuc-pa-viet-nam-dong-hanh-chuyen-doi-so-ho-kinh-doanh-va-cua-hang.html</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>1691ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/tin-tuc-pa-viet-nam-dong-hanh-cung-ngay-hoi-diem-cham-so.html" target="_blank">https://www.pavietnam.vn/vn/tin-tuc-pa-viet-nam-dong-hanh-cung-ngay-hoi-diem-cham-so.html</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>1916ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/ten-mien-store.html" target="_blank">https://www.pavietnam.vn/vn/ten-mien-store.html</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>2303ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/tong-dai/tong-dai-dien-thoai-so" target="_blank">https://www.pavietnam.vn/vn/tong-dai/tong-dai-dien-thoai-so</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>2652ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/uu-dai-ten-mien-viet-nam.html" target="_blank">https://www.pavietnam.vn/vn/uu-dai-ten-mien-viet-nam.html</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>2921ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/wordpress.html" target="_blank">https://www.pavietnam.vn/vn/wordpress.html</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>3111ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/ten-mien-one.html" target="_blank">https://www.pavietnam.vn/vn/ten-mien-one.html</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>3321ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/hosting/web-hosting" target="_blank">https://www.pavietnam.vn/vn/hosting/web-hosting</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>3544ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/tin-tuc-pa-viet-nam-dong-hanh-cung-vnnic-internet-conference-2026-san-sang-ha-tang-ipv6.html" target="_blank">https://www.pavietnam.vn/vn/tin-tuc-pa-viet-nam-dong-hanh-cung-vnnic-internet-conference-2026-san-sang-ha-tang-ipv6.html</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>3750ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/email-server.html" target="_blank">https://www.pavietnam.vn/vn/email-server.html</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>4154ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/tin-tuc-huong-dan-quy-trinh-dau-gia-ten-mien-vn-dot-2.html" target="_blank">https://www.pavietnam.vn/vn/tin-tuc-huong-dan-quy-trinh-dau-gia-ten-mien-vn-dot-2.html</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>4341ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/ten-mien-cloud.html" target="_blank">https://www.pavietnam.vn/vn/ten-mien-cloud.html</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>4593ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/ten-mien-top.html" target="_blank">https://www.pavietnam.vn/vn/ten-mien-top.html</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>4984ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/hosting.html" target="_blank">https://www.pavietnam.vn/vn/hosting.html</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>5172ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/tin-tuc-pa-viet-nam-dong-hanh-cung-ho-kinh-doanh-bac-ninh-voi-ten-mien-bizvn-va-web30s.html" target="_blank">https://www.pavietnam.vn/vn/tin-tuc-pa-viet-nam-dong-hanh-cung-ho-kinh-doanh-bac-ninh-voi-ten-mien-bizvn-va-web30s.html</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>5626ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/ten-mien-online.html" target="_blank">https://www.pavietnam.vn/vn/ten-mien-online.html</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>5891ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/ten-mien-org.html" target="_blank">https://www.pavietnam.vn/vn/ten-mien-org.html</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>6139ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/ten-mien-site.html" target="_blank">https://www.pavietnam.vn/vn/ten-mien-site.html</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>6373ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/tong-dai/tong-dai-chat" target="_blank">https://www.pavietnam.vn/vn/tong-dai/tong-dai-chat</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>7356ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/danh-muc-san-pham/" target="_blank">https://www.pavietnam.vn/vn/danh-muc-san-pham/</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>893ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/bieu-mau-ho-so/" target="_blank">https://www.pavietnam.vn/vn/bieu-mau-ho-so/</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>1124ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://kb.pavietnam.vn/loi-rsync-giua-hai-server-linux-khac-phien-ban.html" target="_blank">https://kb.pavietnam.vn/loi-rsync-giua-hai-server-linux-khac-phien-ban.html</a></td>
+              <td><span class="badge badge-danger">468</span></td>
+              <td>1169ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://kb.pavietnam.vn/huong-dan-cau-hinh-schema-cho-website-tren-web30s.html" target="_blank">https://kb.pavietnam.vn/huong-dan-cau-hinh-schema-cho-website-tren-web30s.html</a></td>
+              <td><span class="badge badge-danger">468</span></td>
+              <td>1390ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://kb.pavietnam.vn/dong-bo-lich-outlook-caldav-synchronizer.html" target="_blank">https://kb.pavietnam.vn/dong-bo-lich-outlook-caldav-synchronizer.html</a></td>
+              <td><span class="badge badge-danger">468</span></td>
+              <td>1403ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/gioi-thieu.html" target="_blank">https://www.pavietnam.vn/vn/gioi-thieu.html</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>1407ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/tuyen-dung.html" target="_blank">https://www.pavietnam.vn/vn/tuyen-dung.html</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>1670ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/lien-he.html" target="_blank">https://www.pavietnam.vn/vn/lien-he.html</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>1689ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/thoa-thuan-su-dung/" target="_blank">https://www.pavietnam.vn/vn/thoa-thuan-su-dung/</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>2124ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://kb.pavietnam.vn/web30s-addon-website-under-construction.html" target="_blank">https://kb.pavietnam.vn/web30s-addon-website-under-construction.html</a></td>
+              <td><span class="badge badge-danger">468</span></td>
+              <td>2229ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://kb.pavietnam.vn/huong-dan-su-dung-mail-private-domain-admin.html" target="_blank">https://kb.pavietnam.vn/huong-dan-su-dung-mail-private-domain-admin.html</a></td>
+              <td><span class="badge badge-danger">468</span></td>
+              <td>2230ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/tin-tuc-pa/" target="_blank">https://www.pavietnam.vn/vn/tin-tuc-pa/</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>2417ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/bao-cao-lam-dung.html" target="_blank">https://www.pavietnam.vn/vn/bao-cao-lam-dung.html</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>2650ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://kb.pavietnam.vn/van-ban-phap-ly.html" target="_blank">https://kb.pavietnam.vn/van-ban-phap-ly.html</a></td>
+              <td><span class="badge badge-danger">468</span></td>
+              <td>3095ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/doi-qua.html" target="_blank">https://www.pavietnam.vn/vn/doi-qua.html</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>3132ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/vipcard.html" target="_blank">https://www.pavietnam.vn/vn/vipcard.html</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>3434ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/cach-thanh-toan.html" target="_blank">https://www.pavietnam.vn/vn/cach-thanh-toan.html</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>3698ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://event.pavietnam.vn/" target="_blank">https://event.pavietnam.vn/</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>3873ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/bang-gia-doi-tac.html" target="_blank">https://www.pavietnam.vn/vn/bang-gia-doi-tac.html</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>3992ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/tin-cong-nghe/" target="_blank">https://www.pavietnam.vn/vn/tin-cong-nghe/</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>4289ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://seal.digicert.com/seals/popup/?tag=_U63nKSF&url=www.pavietnam.vn" target="_blank">https://seal.digicert.com/seals/popup/?tag=_U63nKSF&url=www.pavietnam.vn</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>371ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://support.pavietnam.vn/?redirect=https%3A%2F%2Fwww.pavietnam.vn%2Fvn%2Fhosting%2F" target="_blank">https://support.pavietnam.vn/?redirect=https%3A%2F%2Fwww.pavietnam.vn%2Fvn%2Fhosting%2F</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>441ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://support.pavietnam.vn/?redirect=https%3A%2F%2Fwww.pavietnam.vn%2Fvn%2Fserver%2F" target="_blank">https://support.pavietnam.vn/?redirect=https%3A%2F%2Fwww.pavietnam.vn%2Fvn%2Fserver%2F</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>628ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/chuyen-du-lieu-web" target="_blank">https://www.pavietnam.vn/vn/chuyen-du-lieu-web</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>986ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://ipv6-test.com/validate.php?url=pavietnam.vn" target="_blank">https://ipv6-test.com/validate.php?url=pavietnam.vn</a></td>
+              <td><span class="badge badge-danger">TIMEOUT/ERROR</span></td>
+              <td>N/A</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/sao-luu-du-lieu-web" target="_blank">https://www.pavietnam.vn/vn/sao-luu-du-lieu-web</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>1439ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/en/hosting/" target="_blank">https://www.pavietnam.vn/en/hosting/</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>3029ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/website/toi-uu-website" target="_blank">https://www.pavietnam.vn/vn/website/toi-uu-website</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>3361ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/hosting/chuyen-muc" target="_blank">https://www.pavietnam.vn/vn/hosting/chuyen-muc</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>3888ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/uu-dai-tong-hop.html#hosting1" target="_blank">https://www.pavietnam.vn/vn/uu-dai-tong-hop.html#hosting1</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>4202ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/hosting/unlimited-hosting" target="_blank">https://www.pavietnam.vn/vn/hosting/unlimited-hosting</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>4755ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/hosting/reseller-hosting" target="_blank">https://www.pavietnam.vn/vn/hosting/reseller-hosting</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>5304ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/uu-dai-tong-hop.html#hosting3" target="_blank">https://www.pavietnam.vn/vn/uu-dai-tong-hop.html#hosting3</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>5590ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/hosting/wordpress-vip" target="_blank">https://www.pavietnam.vn/vn/hosting/wordpress-vip</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>6087ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/hosting/java-hosting" target="_blank">https://www.pavietnam.vn/vn/hosting/java-hosting</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>6694ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/hosting/sing-hosting" target="_blank">https://www.pavietnam.vn/vn/hosting/sing-hosting</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>6948ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/uu-dai-tong-hop.html#hosting2" target="_blank">https://www.pavietnam.vn/vn/uu-dai-tong-hop.html#hosting2</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>7155ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/bai-viet-thu-thuat/" target="_blank">https://www.pavietnam.vn/vn/bai-viet-thu-thuat/</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>7672ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/hosting/wordpress-hosting" target="_blank">https://www.pavietnam.vn/vn/hosting/wordpress-hosting</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>8386ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/hosting/web-hosting-python" target="_blank">https://www.pavietnam.vn/vn/hosting/web-hosting-python</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>8902ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://support.pavietnam.vn/?redirect=https%3A%2F%2Fwww.pavietnam.vn%2Fvn%2Fwebsite%2F" target="_blank">https://support.pavietnam.vn/?redirect=https%3A%2F%2Fwww.pavietnam.vn%2Fvn%2Fwebsite%2F</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>470ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://support.pavietnam.vn/?redirect=https%3A%2F%2Fwww.pavietnam.vn%2Fvn%2Femail-server%2F" target="_blank">https://support.pavietnam.vn/?redirect=https%3A%2F%2Fwww.pavietnam.vn%2Fvn%2Femail-server%2F</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>715ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/server/cloud-server-pro" target="_blank">https://www.pavietnam.vn/vn/server/cloud-server-pro</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>1886ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/uu-dai-tong-hop.html#sec-web-web2" target="_blank">https://www.pavietnam.vn/vn/uu-dai-tong-hop.html#sec-web-web2</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>2163ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/en/server/" target="_blank">https://www.pavietnam.vn/en/server/</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>4647ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/phan-mem-may-chu.html" target="_blank">https://www.pavietnam.vn/vn/phan-mem-may-chu.html</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>5352ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/en/website/" target="_blank">https://www.pavietnam.vn/en/website/</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>5862ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/en/email-server/" target="_blank">https://www.pavietnam.vn/en/email-server/</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>7310ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/uu-dai-tong-hop.html?utm_source=pop-up-pa&utm_medium=trang-con-web30s&utm_campaign=web30s-combo-uu-dai-40-trieu-pop-up-pa-trang-con-web30s&utm_term=web30s-tang-100-thoi-gian#sec-web" target="_blank">https://www.pavietnam.vn/vn/uu-dai-tong-hop.html?utm_source=pop-up-pa&utm_medium=trang-con-web30s&utm_campaign=web30s-combo-uu-dai-40-trieu-pop-up-pa-trang-con-web30s&utm_term=web30s-tang-100-thoi-gian#sec-web</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>7602ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/uu-dai-tong-hop.html#cloud1" target="_blank">https://www.pavietnam.vn/vn/uu-dai-tong-hop.html#cloud1</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>7864ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/uu-dai-tong-hop.html#sec-web-web1" target="_blank">https://www.pavietnam.vn/vn/uu-dai-tong-hop.html#sec-web-web1</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>8281ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/uu-dai-tong-hop.html#email1" target="_blank">https://www.pavietnam.vn/vn/uu-dai-tong-hop.html#email1</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>8527ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/" target="_blank">https://www.pavietnam.vn/</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>9521ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/uu-dai-tong-hop.html#cloud2" target="_blank">https://www.pavietnam.vn/vn/uu-dai-tong-hop.html#cloud2</a></td>
+              <td><span class="badge badge-danger">TIMEOUT/ERROR</span></td>
+              <td>N/A</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/uu-dai-tong-hop.html#cloud3" target="_blank">https://www.pavietnam.vn/vn/uu-dai-tong-hop.html#cloud3</a></td>
+              <td><span class="badge badge-danger">TIMEOUT/ERROR</span></td>
+              <td>N/A</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/server/cloud-server-super" target="_blank">https://www.pavietnam.vn/vn/server/cloud-server-super</a></td>
+              <td><span class="badge badge-danger">TIMEOUT/ERROR</span></td>
+              <td>N/A</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/dang-ky-unix.html?item=40834" target="_blank">https://www.pavietnam.vn/vn/dang-ky-unix.html?item=40834</a></td>
+              <td><span class="badge badge-danger">TIMEOUT/ERROR</span></td>
+              <td>N/A</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/dang-ky-unix.html?item=40836" target="_blank">https://www.pavietnam.vn/vn/dang-ky-unix.html?item=40836</a></td>
+              <td><span class="badge badge-danger">TIMEOUT/ERROR</span></td>
+              <td>N/A</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/dang-ky-unix.html?item=40838" target="_blank">https://www.pavietnam.vn/vn/dang-ky-unix.html?item=40838</a></td>
+              <td><span class="badge badge-danger">TIMEOUT/ERROR</span></td>
+              <td>N/A</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/dang-ky-unix.html?item=40840" target="_blank">https://www.pavietnam.vn/vn/dang-ky-unix.html?item=40840</a></td>
+              <td><span class="badge badge-danger">TIMEOUT/ERROR</span></td>
+              <td>N/A</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://support.pavietnam.vn/?redirect=https%3A%2F%2Fwww.pavietnam.vn%2Fvn%2Ftong-dai%2F" target="_blank">https://support.pavietnam.vn/?redirect=https%3A%2F%2Fwww.pavietnam.vn%2Fvn%2Ftong-dai%2F</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>511ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://support.pavietnam.vn/?redirect=https%3A%2F%2Fwww.pavietnam.vn%2Fvn%2Fchung-chi-ssl-tls%2F" target="_blank">https://support.pavietnam.vn/?redirect=https%3A%2F%2Fwww.pavietnam.vn%2Fvn%2Fchung-chi-ssl-tls%2F</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>738ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www-ote.pavietnam.vn/vn/hosting/unlimited-hosting" target="_blank">https://www-ote.pavietnam.vn/vn/hosting/unlimited-hosting</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>1098ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/uu-dai-tong-hop.html#email3" target="_blank">https://www.pavietnam.vn/vn/uu-dai-tong-hop.html#email3</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>2279ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/uu-dai-tong-hop.html#ssl1" target="_blank">https://www.pavietnam.vn/vn/uu-dai-tong-hop.html#ssl1</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>2547ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/uu-dai-tong-hop.html#sec-tongdai-tongdai2" target="_blank">https://www.pavietnam.vn/vn/uu-dai-tong-hop.html#sec-tongdai-tongdai2</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>2769ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/chung-chi-ssl-tls/thawte" target="_blank">https://www.pavietnam.vn/chung-chi-ssl-tls/thawte</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>3263ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/uu-dai-tong-hop.html#email2" target="_blank">https://www.pavietnam.vn/vn/uu-dai-tong-hop.html#email2</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>3594ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/email-server/email-server-rieng-cheap" target="_blank">https://www.pavietnam.vn/vn/email-server/email-server-rieng-cheap</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>4123ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/uu-dai-tong-hop.html#sec-tongdai-tongdai1" target="_blank">https://www.pavietnam.vn/vn/uu-dai-tong-hop.html#sec-tongdai-tongdai1</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>4658ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/en/tong-dai/" target="_blank">https://www.pavietnam.vn/en/tong-dai/</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>5402ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/chung-chi-ssl-tls/digicert" target="_blank">https://www.pavietnam.vn/chung-chi-ssl-tls/digicert</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>5629ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/dang-ky-unix-38760.html" target="_blank">https://www.pavietnam.vn/vn/dang-ky-unix-38760.html</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>5944ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/dang-ky-unix-38742.html" target="_blank">https://www.pavietnam.vn/vn/dang-ky-unix-38742.html</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>6500ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/dang-ky-unix-38715.html" target="_blank">https://www.pavietnam.vn/vn/dang-ky-unix-38715.html</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>6746ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/dang-ky-unix-38724.html" target="_blank">https://www.pavietnam.vn/vn/dang-ky-unix-38724.html</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>6991ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/dang-ky-unix-38751.html" target="_blank">https://www.pavietnam.vn/vn/dang-ky-unix-38751.html</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>7245ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/tu-van-ssl.html" target="_blank">https://www.pavietnam.vn/vn/tu-van-ssl.html</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>8146ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/en/chung-chi-ssl-tls/" target="_blank">https://www.pavietnam.vn/en/chung-chi-ssl-tls/</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>8407ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/email-server/private-email" target="_blank">https://www.pavietnam.vn/vn/email-server/private-email</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>9098ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/tong-dai/vn/dang-ky-unix-38724.html" target="_blank">https://www.pavietnam.vn/vn/tong-dai/vn/dang-ky-unix-38724.html</a></td>
+              <td><span class="badge badge-danger">404</span></td>
+              <td>226ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/tong-dai/vn/dang-ky-unix-38751.html" target="_blank">https://www.pavietnam.vn/vn/tong-dai/vn/dang-ky-unix-38751.html</a></td>
+              <td><span class="badge badge-danger">404</span></td>
+              <td>225ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/tong-dai/vn/dang-ky-unix-38760.html" target="_blank">https://www.pavietnam.vn/vn/tong-dai/vn/dang-ky-unix-38760.html</a></td>
+              <td><span class="badge badge-danger">404</span></td>
+              <td>225ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/tong-dai/vn/dang-ky-unix-38715.html" target="_blank">https://www.pavietnam.vn/vn/tong-dai/vn/dang-ky-unix-38715.html</a></td>
+              <td><span class="badge badge-danger">404</span></td>
+              <td>231ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/tong-dai/vn/dang-ky-unix-38742.html" target="_blank">https://www.pavietnam.vn/vn/tong-dai/vn/dang-ky-unix-38742.html</a></td>
+              <td><span class="badge badge-danger">404</span></td>
+              <td>236ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://support.pavietnam.vn/?redirect=https%3A%2F%2Fwww.pavietnam.vn%2Fvn%2Fe-hoa-don%2F" target="_blank">https://support.pavietnam.vn/?redirect=https%3A%2F%2Fwww.pavietnam.vn%2Fvn%2Fe-hoa-don%2F</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>431ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/tong-dai/vn/dang-ky-unix-41464.html" target="_blank">https://www.pavietnam.vn/vn/tong-dai/vn/dang-ky-unix-41464.html</a></td>
+              <td><span class="badge badge-danger">404</span></td>
+              <td>667ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/tong-dai/vn/dang-ky-unix-38769.html" target="_blank">https://www.pavietnam.vn/vn/tong-dai/vn/dang-ky-unix-38769.html</a></td>
+              <td><span class="badge badge-danger">404</span></td>
+              <td>669ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/tong-dai/vn/dang-ky-unix-41487.html" target="_blank">https://www.pavietnam.vn/vn/tong-dai/vn/dang-ky-unix-41487.html</a></td>
+              <td><span class="badge badge-danger">404</span></td>
+              <td>690ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/tong-dai/vn/dang-ky-unix-41457.html" target="_blank">https://www.pavietnam.vn/vn/tong-dai/vn/dang-ky-unix-41457.html</a></td>
+              <td><span class="badge badge-danger">404</span></td>
+              <td>694ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/tong-dai/vn/dang-ky-unix-41471.html" target="_blank">https://www.pavietnam.vn/vn/tong-dai/vn/dang-ky-unix-41471.html</a></td>
+              <td><span class="badge badge-danger">404</span></td>
+              <td>696ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/dang-ky-unix-41464.html" target="_blank">https://www.pavietnam.vn/vn/dang-ky-unix-41464.html</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>1464ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/e-hoa-don/hoa-don-dau-vao" target="_blank">https://www.pavietnam.vn/vn/e-hoa-don/hoa-don-dau-vao</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>1886ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/uu-dai-tong-hop.html#hoadon2" target="_blank">https://www.pavietnam.vn/vn/uu-dai-tong-hop.html#hoadon2</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>2180ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/dang-ky-unix-41471.html" target="_blank">https://www.pavietnam.vn/vn/dang-ky-unix-41471.html</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>2404ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/dang-ky-unix-41487.html" target="_blank">https://www.pavietnam.vn/vn/dang-ky-unix-41487.html</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>2667ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/uu-dai-tong-hop.html#hoadon1" target="_blank">https://www.pavietnam.vn/vn/uu-dai-tong-hop.html#hoadon1</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>2922ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/en/e-hoa-don/" target="_blank">https://www.pavietnam.vn/en/e-hoa-don/</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>3434ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/dang-ky-unix-38769.html" target="_blank">https://www.pavietnam.vn/vn/dang-ky-unix-38769.html</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>3924ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/dang-ky-unix-41457.html" target="_blank">https://www.pavietnam.vn/vn/dang-ky-unix-41457.html</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>4378ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/uu-dai-tong-hop.html#sec-hoadon-hoadon2" target="_blank">https://www.pavietnam.vn/vn/uu-dai-tong-hop.html#sec-hoadon-hoadon2</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>970ms</td>
+            </tr>
+          
+            <tr>
+              <td style="max-width:500px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.pavietnam.vn/vn/uu-dai-tong-hop.html#sec-hoadon-hoadon1" target="_blank">https://www.pavietnam.vn/vn/uu-dai-tong-hop.html#sec-hoadon-hoadon1</a></td>
+              <td><span class="badge badge-success">200</span></td>
+              <td>986ms</td>
+            </tr>
+          
+        </tbody>
+      </table>
+    </div>
+  </body>
+  </html>
